@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Variable page 1</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+    </div>
+    
+
+    <script>
+        let a = 10;
+        document.getElementById('item1').innerText = a;
+        // a = 100;
+        // document.getElementById('item2').innerText = a;
+
+        // Variable declaration adhering to standard camelCase conventions
+        let currentAccountBalance = 250.75;
+        let totalUserCount = 42;
+        var isUserAuthenticated = true;
+        var isUserAuthenticated = true;
+
+        // Re-assigning an existing variable pointer
+        currentAccountBalance = 310.50;
+
+    </script>
+</body>
+</html>

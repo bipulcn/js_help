@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Variable page 1</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+        <div>a = <b id="item3"></b></div>
+        <div>a = <b id="item4"></b></div>
+    </div>
+    
+
+    <script>
+        let a = 10;
+        let b = "Hello";
+        let c = 10.5;
+        let d = true;
+        document.getElementById('item1').innerText = a;
+        document.getElementById('item2').innerText = b;
+        document.getElementById('item3').innerText = c;
+        document.getElementById('item4').innerText = d;
+
+
+
+        // Demonstrating type evaluation via the typeof operator
+        let price = 99.99;
+        let productName = "Wireless Headphones";
+        let inStock = true;
+        let discountCode;
+        let promotionalOffer = null;
+
+        console.log(typeof price);            // "number"
+        console.log(typeof productName);      // "string"
+        console.log(typeof inStock);          // "boolean"
+        console.log(typeof discountCode);     // "undefined"
+        console.log(typeof promotionalOffer); // "object" (historic legacy bug in JS engine specification)
+
+    </script>
+</body>
+</html>

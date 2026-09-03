@@ -1,0 +1,13 @@
+body {
+    font-family: Calibri, 'Trebuchet MS', sans-serif, 'Gill Sans', 'Gill Sans MT';
+    font-size: 1.2rem;
+}
+
+.box {
+    max-width: 600px;
+    min-height: 400px;
+    padding: 20px;
+    margin: 30px auto;
+    border: thin solid #0005;
+    border-radius: 10px;
+}

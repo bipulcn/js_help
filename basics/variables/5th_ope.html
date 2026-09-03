@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Variable page Template Literals</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+    </div>
+    
+
+    <script>
+        const subscriberName = "Jordan";
+        const streamingPlan = "Premium HD";
+        const monthlyCost = 15.99;
+
+        // Legacy String Concatenation
+        const legacyMessage = "User " + subscriberName + " subscribed to " + streamingPlan + " for $" + monthlyCost + "/month.";
+
+        // Modern Template Literal Formulation
+        const modernMessage = `User ${subscriberName} subscribed to ${streamingPlan} for $${monthlyCost}/month. Renewal cost in 12 months: $${monthlyCost * 12}.`;
+
+        console.log(modernMessage);
+
+    </script>
+</body>
+</html>

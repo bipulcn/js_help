@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Variable page 1</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+        <div>a = <b id="item3"></b></div>
+        <div>a = <b id="item4"></b></div>
+    </div>
+    
+
+    <script>
+        // Demonstrating variable assignment rules
+        const birthYear = 1998;
+        let userAge = 25;
+
+        // Valid reassignment of a block-scoped let variable
+        userAge = 26;
+
+        // Invalid reassignment of an immutable const binding (Throws TypeError)
+        // birthYear = 2000; 
+
+        if (true) {
+        var legacyVariable = "Accessible outside block";
+        let modernVariable = "Confined to this block";
+        }
+
+        console.log(legacyVariable); // Logs: "Accessible outside block"
+        // console.log(modernVariable); // Uncaught ReferenceError: modernVariable is not defined
+
+
+        // 
+        const cartTotal = 50.00;
+        const discount = 10.00;
+        cartTotal = cartTotal - discount; 
+        console.log("Final price:", cartTotal);
+    </script>
+</body>
+</html>

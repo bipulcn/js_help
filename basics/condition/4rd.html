@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Equality Comparison Semantics: Strict vs. Loose</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+    </div>
+    
+
+    <script>
+        let cart = [];
+        let accountBalance = "0";
+
+        if (cart) {
+            console.log("Your cart has items in it! Proceed to checkout.");
+        }
+
+        if (accountBalance) {
+            console.log("You have a positive balance.");
+        }
+
+        // second problem
+
+        let userInput = [];
+
+        if (userInput == false) {
+            console.log("Input is false."); // This runs!
+        }
+
+        if (userInput == 0) {
+            console.log("Input is zero."); // This ALSO runs!
+        }
+
+    </script>
+</body>
+</html>

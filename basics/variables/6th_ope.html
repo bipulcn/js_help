@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Variable page Type Conversion and Implicit Coercion</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+    </div>
+    
+
+    <script>
+    // Explicit Type Conversion
+    const inputYearString = "2024";
+    const convertedYearNumber = Number(inputYearString);
+    console.log(convertedYearNumber + 2); // 2026
+
+    const numericalId = 8842;
+    const convertedIdString = String(numericalId);
+    console.log(typeof convertedIdString); // "string"
+
+    // Implicit Type Coercion
+    console.log("I am " + 25 + " years old"); // Number 25 coerced to String "25"
+    console.log("23" - "10" - 3);             // Strings coerced to Numbers: 10
+    console.log("23" + "10");                 // String concatenation occurs: "2310"
+    console.log("23" * "2");                  // Multiplication coerces to Numbers: 46
+
+
+
+    </script>
+</body>
+</html>

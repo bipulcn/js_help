@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Equality Comparison Semantics: Strict vs. Loose</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+    </div>
+    
+
+    <script>
+        let userRole = "guest";
+
+        // The flawed security check
+        if (userRole = "admin") {
+            console.log("Access Granted: Welcome to the secret dashboard.");
+        } else {
+            console.log("Access Denied.");
+        }
+
+        console.log("Current role is now:", userRole);
+
+    </script>
+</body>
+</html>

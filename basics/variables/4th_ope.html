@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Variable page Basic Operators and Precedence</h1>
+        <div>My variable </div>
+        <div>a = <b id="item1"></b></div>
+        <div>a = <b id="item2"></b></div>
+    </div>
+    
+
+    <script>
+        JavaScript
+        // Mathematical, Assignment, and Comparison Operators
+        const currentYear = 2026;
+        const ageAlex = currentYear - 1995;
+        const ageTaylor = currentYear - 2001;
+
+        console.log(ageAlex * 2, ageAlex / 10, 2 ** 3); // Arithmetic: 62, 3.1, 8 (exponentiation)
+
+        let accountBalance = 100;
+        accountBalance += 50; // Compound assignment: Equivalent to accountBalance = accountBalance + 50
+        accountBalance++;     // Increment operator: Equivalent to accountBalance += 1
+
+        // Comparison operators return explicit booleans
+        const isAlexOlder = ageAlex > ageTaylor;
+        console.log(isAlexOlder); // true
+
+
+
+    </script>
+</body>
+</html>
