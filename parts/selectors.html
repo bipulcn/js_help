@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interactive Showcase</title>
+    <link rel="stylesheet" href="../css/design.css" />
+    <link rel="stylesheet" href="../css/play.css" />
+  </head>
+  <body>
+    <nav id="sidebar">
+      <h3>JS Demonstrations</h3>
+      <a href="veriables.html">1. Variables</a>
+      <a href="conditions.html">2. Conditionals</a>
+      <a href="loops.html">3. Loops</a>
+      <a href="selectors.html">4. Selectors</a>
+      <a href="doms.html">5. DOM</a>
+      <a href="functions.html">6. Functions</a>
+      <a href="objects.html">7. Objects</a>
+      <a href="events.html">8. Events</a>
+    </nav>
+
+    <main id="main">
+      <!-- ============ 4. SELECTORS ============ -->
+      <section class="topic" id="selectors" style="--accent: #3e8fe0">
+        <div class="topic-head">
+          <span class="topic-n">04</span>
+          <h2>Selecting elements</h2>
+        </div>
+        <p class="topic-blurb">
+          Before changing part of a page you have to find it. Ten ways to grab
+          the right element.
+        </p>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Select by id</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Grabs the one element with this exact id and highlights it.
+          </p>
+          <div class="row">
+            <span class="pill" id="s1-target">product-42</span
+            ><button onclick="runS1()">Select &amp; highlight</button>
+          </div>
+          <div class="output" id="out-s1">// press select</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Select the first match</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            <span class="mono">querySelector</span> returns just the first sale
+            item in a list.
+          </p>
+          <ul class="list">
+            <li>Notebook <span class="pill">৳120</span></li>
+            <li id="s2-sale">
+              Backpack
+              <span class="pill" style="background: #fdecea; color: #c23b31"
+                >on sale</span
+              >
+            </li>
+            <li>Pen set <span class="pill">৳80</span></li>
+          </ul>
+          <div class="row">
+            <button onclick="runS2()">Find sale item</button>
+          </div>
+          <div class="output" id="out-s2">// press to find it</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Select every match</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            <span class="mono">querySelectorAll</span> grabs a whole group of
+            elements at once.
+          </p>
+          <div class="row" id="s3-row">
+            <span class="pill">item</span><span class="pill">item</span
+            ><span class="pill">item</span><span class="pill">item</span>
+          </div>
+          <div class="row">
+            <button onclick="runS3()">Highlight all</button>
+          </div>
+          <div class="output" id="out-s3">// press to select every pill</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Read an input's value</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Selects a text box and reads whatever's currently typed in it.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="s4-box"
+              placeholder="search products..."
+              style="width: 160px"
+            /><button onclick="runS4()">Read value</button>
+          </div>
+          <div class="output" id="out-s4">
+            // type something then press read
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Count checked toppings</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Selects every checked checkbox in a pizza-topping form.
+          </p>
+          <div class="row">
+            <label class="chk"
+              ><input type="checkbox" class="s5-top" checked /> Cheese</label
+            ><label class="chk"
+              ><input type="checkbox" class="s5-top" /> Mushroom</label
+            ><label class="chk"
+              ><input type="checkbox" class="s5-top" checked /> Olives</label
+            ><button onclick="runS5()">Count selected</button>
+          </div>
+          <div class="output" id="out-s5">// pick toppings then count</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Read the chosen radio</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Finds which shipping option is currently selected.
+          </p>
+          <div class="row">
+            <label class="chk"
+              ><input type="radio" name="s6-ship" value="standard" checked />
+              Standard</label
+            ><label class="chk"
+              ><input type="radio" name="s6-ship" value="express" />
+              Express</label
+            ><button onclick="runS6()">Check choice</button>
+          </div>
+          <div class="output" id="out-s6">// pick a shipping method</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Select by data attribute</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Products are tagged with a SKU code, then looked up by it.
+          </p>
+          <div class="row" id="s7-row">
+            <span class="pill" data-sku="A100">Shirt</span
+            ><span class="pill" data-sku="B200">Shoes</span
+            ><span class="pill" data-sku="C300">Hat</span>
+          </div>
+          <div class="row">
+            <input
+              type="text"
+              id="s7-sku"
+              value="B200"
+              style="width: 80px"
+            /><button onclick="runS7()">Find by SKU</button>
+          </div>
+          <div class="output" id="out-s7">// enter a SKU code</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Select the whole card from a click</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            <span class="mono">closest()</span> walks up from wherever you
+            clicked to find its parent card.
+          </p>
+          <div class="row">
+            <div
+              class="pill"
+              data-name="Alpha"
+              onclick="runS8(this)"
+              style="cursor: pointer"
+            >
+              Alpha
+            </div>
+            <div
+              class="pill"
+              data-name="Beta"
+              onclick="runS8(this)"
+              style="cursor: pointer"
+            >
+              Beta
+            </div>
+          </div>
+          <div class="output" id="out-s8">// click a card above</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Select a nested element</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            Reaches inside a product card to grab just its title, not the whole
+            card.
+          </p>
+          <div class="box" id="s9-card">
+            <strong id="s9-title">Wireless Mouse</strong>
+            <div class="pill">In stock</div>
+          </div>
+          <div class="row">
+            <button onclick="runS9()">Select title only</button>
+          </div>
+          <div class="output" id="out-s9">// press select</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Count matching elements</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            Counts how many messages in an inbox are marked unread.
+          </p>
+          <ul class="list">
+            <li class="s10-msg unread">
+              Order shipped <span class="pill">unread</span>
+            </li>
+            <li class="s10-msg">Welcome email</li>
+            <li class="s10-msg unread">
+              Password reset <span class="pill">unread</span>
+            </li>
+          </ul>
+          <div class="row">
+            <button onclick="runS10()">Count unread</button>
+          </div>
+          <div class="output" id="out-s10">// press to count</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/selectors.js"></script>
+  </body>
+</html>

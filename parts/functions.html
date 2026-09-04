@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interactive Showcase</title>
+    <link rel="stylesheet" href="../css/design.css" />
+  </head>
+  <body>
+    <nav id="sidebar">
+      <h3>JS Demonstrations</h3>
+      <a href="veriables.html">1. Variables</a>
+      <a href="conditions.html">2. Conditionals</a>
+      <a href="loops.html">3. Loops</a>
+      <a href="selectors.html">4. Selectors</a>
+      <a href="doms.html">5. DOM</a>
+      <a href="functions.html">6. Functions</a>
+      <a href="objects.html">7. Objects</a>
+      <a href="events.html">8. Events</a>
+    </nav>
+
+    <main id="main">
+      <section id="sec-functions">
+        <h2>5. Functions & Reusability</h2>
+        <p class="sub">
+          Progressing from basic returns to pure calculations, string
+          sanitizers, and closures.
+        </p>
+        <div class="grid">
+          <div class="box">
+            <div class="box-header">
+              <span>1. Unit Multiplier</span><span class="lvl">Level 1</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="f1" value="12" />
+              <button
+                onclick="
+                  document.getElementById('o1-f').innerText =
+                    calcDozen(document.getElementById('f1').value) + ' units'
+                "
+              >
+                Run
+              </button>
+            </div>
+            <div class="out" id="o1-f">144 units</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>2. Clock Greeting</span><span class="lvl">Level 2</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="f2" value="14" placeholder="Hour 0-23" />
+              <button
+                onclick="
+                  document.getElementById('o2-f').innerText = getGreeting(
+                    +document.getElementById('f2').value,
+                  )
+                "
+              >
+                Greet
+              </button>
+            </div>
+            <div class="out" id="o2-f">Good Afternoon</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>3. Circle Area Formula</span
+              ><span class="lvl">Level 3</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="f3" value="5" placeholder="Radius" />
+              <button
+                onclick="
+                  document.getElementById('o3-f').innerText =
+                    calcCircleArea(document.getElementById('f3').value) +
+                    ' sq units'
+                "
+              >
+                Calculate
+              </button>
+            </div>
+            <div class="out" id="o3-f">78.54 sq units</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>4. Title Capitalizer</span><span class="lvl">Level 4</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="f4" value="clean code practices" />
+              <button
+                onclick="
+                  document.getElementById('o4-f').innerText = toTitleCase(
+                    document.getElementById('f4').value,
+                  )
+                "
+              >
+                Format
+              </button>
+            </div>
+            <div class="out" id="o4-f">Clean Code Practices</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>5. RNG Dice Generator</span><span class="lvl">Level 5</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  document.getElementById('o5-f').innerText =
+                    'Rolled: ' + rollDice(1, 6)
+                "
+              >
+                Roll (1-6)
+              </button>
+            </div>
+            <div class="out" id="o5-f">Rolled: 4</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>6. Email Masking Utility</span
+              ><span class="lvl">Level 6</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="f6" value="developer@domain.com" />
+              <button
+                onclick="
+                  document.getElementById('o6-f').innerText = maskEmail(
+                    document.getElementById('f6').value,
+                  )
+                "
+              >
+                Mask
+              </button>
+            </div>
+            <div class="out" id="o6-f">d***r@domain.com</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>7. Palindrome Verifier</span
+              ><span class="lvl">Level 7</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="f7" value="racecar" />
+              <button
+                onclick="
+                  document.getElementById('o7-f').innerText = isPalindrome(
+                    document.getElementById('f7').value,
+                  )
+                    ? 'Yes, Palindrome'
+                    : 'Not Palindrome'
+                "
+              >
+                Verify
+              </button>
+            </div>
+            <div class="out" id="o7-f">Yes, Palindrome</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>8. Discount with Fallback</span
+              ><span class="lvl">Level 8</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="f8-val" value="200" placeholder="$" />
+              <input type="number" id="f8-disc" placeholder="% (Optional)" />
+              <button
+                onclick="
+                  document.getElementById('o8-f').innerText =
+                    '$' +
+                    computeDiscount(
+                      +document.getElementById('f8-val').value,
+                      document.getElementById('f8-disc').value,
+                    )
+                "
+              >
+                Apply
+              </button>
+            </div>
+            <div class="out" id="o8-f">$180.00 (Used 10% default)</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>9. URL Slug Generator</span><span class="lvl">Level 9</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="f9" value="10 Easy JS Tips & Tricks!" />
+              <button
+                onclick="
+                  document.getElementById('o9-f').innerText = buildSlug(
+                    document.getElementById('f9').value,
+                  )
+                "
+              >
+                Slugify
+              </button>
+            </div>
+            <div class="out" id="o9-f">10-easy-js-tips-tricks</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>10. Function Closure State</span
+              ><span class="lvl">Level 10</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  document.getElementById('o10-f').innerText =
+                    'Wallet: $' + myBankVault(10)
+                "
+              >
+                Deposit $10
+              </button>
+            </div>
+            <div class="out" id="o10-f">Wallet: $100</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 6. FUNCTIONS ============ -->
+      <section class="topic" id="functions" style="--accent: #159473">
+        <div class="topic-head">
+          <span class="topic-n">06</span>
+          <h2>Functions</h2>
+        </div>
+        <p class="topic-blurb">
+          A function packages logic so you can reuse it — ten small reusable
+          tools.
+        </p>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Greet a customer</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">One input in, one message out.</p>
+          <div class="row">
+            <input
+              type="text"
+              id="f1-name"
+              value="Sam"
+              style="width: 110px"
+            /><button onclick="runF1()">Greet</button>
+          </div>
+          <div class="output" id="out-f1">// enter a name</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Order total with tax</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            A function that always applies the same tax rate to any subtotal.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="f2-sub"
+              value="500"
+              style="width: 90px"
+            /><button onclick="runF2()">Calculate total</button>
+          </div>
+          <div class="output" id="out-f2">// enter a subtotal</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Tip calculator</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Reusable across any bill amount and tip percentage.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="f3-bill"
+              value="1200"
+              style="width: 90px"
+            /><input
+              type="number"
+              id="f3-pct"
+              value="10"
+              style="width: 60px"
+            /><button onclick="runF3()">Add tip</button>
+          </div>
+          <div class="output" id="out-f3">// bill, tip %</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Temperature converter</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Same formula as before, now wrapped as a reusable function.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="f4-f"
+              value="98.6"
+              style="width: 80px"
+            /><button onclick="runF4()">°F → °C</button>
+          </div>
+          <div class="output" id="out-f4">// enter °F</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Discount calculator</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">A function taking a price and a percentage off.</p>
+          <div class="row">
+            <input
+              type="number"
+              id="f5-price"
+              value="2000"
+              style="width: 90px"
+            /><input
+              type="number"
+              id="f5-off"
+              value="25"
+              style="width: 60px"
+            /><button onclick="runF5()">Apply discount</button>
+          </div>
+          <div class="output" id="out-f5">// price, % off</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Password validator</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Returns true only if a password meets a minimum length and has a
+            number.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="f6-pw"
+              placeholder="new password"
+              style="width: 150px"
+            /><button onclick="runF6()">Validate</button>
+          </div>
+          <div class="output" id="out-f6">// needs 8+ chars and a digit</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Filter products under a price</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Passes a small function into
+            <span class="mono">.filter()</span> to keep only matches.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="f7-max"
+              value="150"
+              style="width: 80px"
+            /><button onclick="runF7()">Filter</button>
+          </div>
+          <div class="output" id="out-f7">
+            // products: ৳120, ৳340, ৳80, ৳210, ৳95
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Convert prices with map</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            <span class="mono">.map()</span> runs a function over every price to
+            convert currency.
+          </p>
+          <div class="row">
+            <button onclick="runF8()">Convert all to USD</button>
+          </div>
+          <div class="output" id="out-f8">// prices in BDT: 610, 1220, 305</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Sum a cart with reduce</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            <span class="mono">.reduce()</span> collapses a whole array down to
+            one total.
+          </p>
+          <div class="row"><button onclick="runF9()">Total cart</button></div>
+          <div class="output" id="out-f9">// items: 120, 340, 80, 210, 95</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Sort products by price</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            A comparator function tells
+            <span class="mono">.sort()</span> which item comes first.
+          </p>
+          <div class="row">
+            <button onclick="runF10('asc')">Low to high</button
+            ><button class="alt" onclick="runF10('desc')">High to low</button>
+          </div>
+          <div class="output" id="out-f10">
+            // products: Shirt ৳450, Cap ৳150, Shoes ৳900
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/functions.js"></script>
+  </body>
+</html>

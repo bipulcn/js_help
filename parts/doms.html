@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interactive Showcase</title>
+    <link rel="stylesheet" href="../css/design.css" />
+  </head>
+  <body>
+    <nav id="sidebar">
+      <h3>JS Demonstrations</h3>
+      <a href="veriables.html">1. Variables</a>
+      <a href="conditions.html">2. Conditionals</a>
+      <a href="loops.html">3. Loops</a>
+      <a href="selectors.html">4. Selectors</a>
+      <a href="doms.html">5. DOM</a>
+      <a href="functions.html">6. Functions</a>
+      <a href="objects.html">7. Objects</a>
+      <a href="events.html">8. Events</a>
+    </nav>
+
+    <main id="main">
+      <section id="sec-dom">
+        <h2>4. DOM Selection & Manipulation</h2>
+        <p class="sub">
+          Progressing from attribute modification to node creation, destruction,
+          and live event handling.
+        </p>
+        <div class="grid">
+          <div class="box">
+            <div class="box-header">
+              <span>1. Direct Style Mutator</span
+              ><span class="lvl">Level 1</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  document.getElementById('d1-target').style.color = '#ef4444'
+                "
+              >
+                Red
+              </button>
+              <button
+                onclick="
+                  document.getElementById('d1-target').style.color = '#0284c7'
+                "
+              >
+                Blue
+              </button>
+              <button
+                onclick="
+                  document.getElementById('d1-target').style.color = '#15803d'
+                "
+              >
+                Green
+              </button>
+            </div>
+            <div class="out" id="d1-target" style="font-weight: bold">
+              Colored Live Text
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>2. Visibility Toggle</span><span class="lvl">Level 2</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  let el = document.getElementById('d2-target');
+                  el.style.display =
+                    el.style.display === 'none' ? 'block' : 'none';
+                "
+              >
+                Show/Hide
+              </button>
+            </div>
+            <div class="out">
+              <span id="d2-target">Surprise revealed content!</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>3. Dynamic Keystroke Mirror</span
+              ><span class="lvl">Level 3</span>
+            </div>
+            <div class="controls">
+              <input
+                type="text"
+                placeholder="Start typing..."
+                oninput="
+                  document.getElementById('o3-d').innerText =
+                    this.value || 'Waiting for input...'
+                "
+              />
+            </div>
+            <div class="out" id="o3-d">Waiting for input...</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>4. Step Font Resizer</span><span class="lvl">Level 4</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  fontSizeVar += 2;
+                  document.getElementById('o4-d').style.fontSize =
+                    fontSizeVar + 'px';
+                "
+              >
+                Enlarge (+)
+              </button>
+              <button
+                onclick="
+                  fontSizeVar = 12;
+                  document.getElementById('o4-d').style.fontSize = '12px';
+                "
+              >
+                Reset
+              </button>
+            </div>
+            <div class="out" id="o4-d" style="font-size: 12px">
+              Dynamic font scaling label
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>5. Live Image Swapper</span><span class="lvl">Level 5</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  document.getElementById('d5-img').innerText = '☀️ Daytime'
+                "
+              >
+                Day
+              </button>
+              <button
+                onclick="
+                  document.getElementById('d5-img').innerText = '🌙 Nighttime'
+                "
+              >
+                Night
+              </button>
+            </div>
+            <div class="out" id="d5-img" style="font-weight: bold">
+              ☀️ Daytime
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>6. Append List Node</span><span class="lvl">Level 6</span>
+            </div>
+            <div class="controls">
+              <input
+                type="text"
+                id="d6-txt"
+                value="Task item"
+                style="width: 80px"
+              />
+              <button onclick="appendTaskNode()">Add</button>
+            </div>
+            <div class="out" style="max-height: 50px; overflow-y: auto">
+              <ul id="d6-list" style="margin-left: 16px; font-size: 0.75rem">
+                <li>Initial Item</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>7. Delete Self on Click</span
+              ><span class="lvl">Level 7</span>
+            </div>
+            <div class="controls">
+              <span style="font-size: 0.75rem">Click badge to destroy:</span>
+            </div>
+            <div class="out" id="d7-container" style="gap: 4px">
+              <span
+                class="tag tag-red"
+                style="cursor: pointer"
+                onclick="this.remove()"
+                >Tag #1 (X)</span
+              >
+              <span
+                class="tag tag-red"
+                style="cursor: pointer"
+                onclick="this.remove()"
+                >Tag #2 (X)</span
+              >
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>8. Slider Width Driver</span
+              ><span class="lvl">Level 8</span>
+            </div>
+            <div class="controls">
+              <input
+                type="range"
+                min="10"
+                max="100"
+                value="40"
+                oninput="
+                  document.getElementById('d8-bar').style.width =
+                    this.value + '%'
+                "
+              />
+            </div>
+            <div class="out" style="padding: 2px 4px">
+              <div
+                id="d8-bar"
+                style="
+                  height: 14px;
+                  background: #0284c7;
+                  width: 40%;
+                  border-radius: 2px;
+                "
+              ></div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>9. Interactive Collapsible</span
+              ><span class="lvl">Level 9</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  let p = document.getElementById('d9-panel');
+                  p.style.display =
+                    p.style.display === 'none' ? 'block' : 'none';
+                "
+              >
+                Accordion Switch
+              </button>
+            </div>
+            <div class="out">
+              <div id="d9-panel" style="display: none; font-size: 0.75rem">
+                Deep nested details panel content successfully expanded.
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>10. Active Focus Tracker</span
+              ><span class="lvl">Level 10</span>
+            </div>
+            <div class="controls">
+              <input
+                type="text"
+                placeholder="Focus me..."
+                onfocus="this.style.background = '#fef9c3'"
+                onblur="this.style.background = '#fff'"
+              />
+              <input
+                type="text"
+                placeholder="Or me..."
+                onfocus="this.style.background = '#fef9c3'"
+                onblur="this.style.background = '#fff'"
+              />
+            </div>
+            <div class="out" style="font-size: 0.75rem">
+              Input turns yellow on active focus
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 5. DOM MANIPULATION ============ -->
+      <section class="topic" id="dom" style="--accent: #c23b31">
+        <div class="topic-head">
+          <span class="topic-n">05</span>
+          <h2>DOM manipulation</h2>
+        </div>
+        <p class="topic-blurb">
+          Once you've found an element, you can change it — ten everyday UI
+          updates.
+        </p>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Update order status</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Changes a line of text, the way a delivery app updates your order.
+          </p>
+          <div class="row">
+            <span class="pill" id="d1-status">Preparing</span
+            ><button onclick="runD1()">Mark shipped</button>
+          </div>
+          <div class="output" id="out-d1">// press to update</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Toggle a sale badge</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Adds or removes a highlighted style from an element.
+          </p>
+          <div class="row">
+            <span class="pill" id="d2-badge">Regular price</span
+            ><button onclick="runD2()">Toggle sale</button>
+          </div>
+          <div class="output" id="out-d2">// press to toggle</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Add item to cart</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Creates a new list item and appends it to the page.
+          </p>
+          <ul class="list" id="d3-cart">
+            <li>Notebook <span class="pill">৳120</span></li>
+          </ul>
+          <div class="row">
+            <input
+              type="text"
+              id="d3-item"
+              placeholder="item name"
+              style="width: 120px"
+            /><input
+              type="number"
+              id="d3-price"
+              placeholder="price"
+              style="width: 80px"
+            /><button onclick="runD3()">Add to cart</button>
+          </div>
+          <div class="output" id="out-d3">// add an item above</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Remove a to-do</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">Removes an element from the page entirely.</p>
+          <ul class="list" id="d4-todo">
+            <li>
+              Buy groceries
+              <button class="mini" onclick="this.parentElement.remove()">
+                done
+              </button>
+            </li>
+            <li>
+              Finish homework
+              <button class="mini" onclick="this.parentElement.remove()">
+                done
+              </button>
+            </li>
+          </ul>
+          <div class="output" id="out-d4">// click "done" to remove a task</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Notification bell count</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Bumps a badge number up, like new messages arriving.
+          </p>
+          <div class="row">
+            🔔 <span class="pill" id="d5-count">0</span
+            ><button onclick="runD5()">New message</button
+            ><button class="alt" onclick="runD5clear()">Clear</button>
+          </div>
+          <div class="output" id="out-d5">
+            // press "new message" a few times
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Bio character counter</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Live-updates a counter as you type, common on profile forms.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="d6-bio"
+              placeholder="write a short bio..."
+              style="width: 220px"
+              maxlength="80"
+              oninput="runD6()"
+            />
+          </div>
+          <div class="output" id="out-d6">0 / 80 characters</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Form completion bar</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Fills a progress bar based on how many fields are filled in.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="d7-name"
+              placeholder="name"
+              style="width: 100px"
+              oninput="runD7()"
+            /><input
+              type="text"
+              id="d7-email"
+              placeholder="email"
+              style="width: 120px"
+              oninput="runD7()"
+            /><input
+              type="text"
+              id="d7-phone"
+              placeholder="phone"
+              style="width: 100px"
+              oninput="runD7()"
+            />
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" id="d7-bar"></div>
+          </div>
+          <div class="output" id="out-d7">0% complete</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Switch a product thumbnail</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Clicking a color swatch swaps which image / label is shown as
+            active.
+          </p>
+          <div class="box" id="d8-preview">Viewing: Blue</div>
+          <div class="row">
+            <button onclick="runD8('Blue')">Blue</button
+            ><button onclick="runD8('Red')">Red</button
+            ><button onclick="runD8('Black')">Black</button>
+          </div>
+          <div class="output" id="out-d8">// pick a color</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Render a contact list</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            Builds an entire list of elements from an array of data in one go.
+          </p>
+          <ul class="list" id="d9-contacts"></ul>
+          <div class="row">
+            <button onclick="runD9()">Render contacts</button
+            ><button class="alt" onclick="runD9sort()">Sort A–Z</button>
+          </div>
+          <div class="output" id="out-d9">// press render</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Confirm-delete dialog</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            Shows and hides a confirmation panel, like deleting an account.
+          </p>
+          <div class="row">
+            <button onclick="runD10()">Delete account</button>
+          </div>
+          <div class="box" id="d10-modal" style="display: none">
+            Are you sure?
+            <button onclick="runD10confirm()">Yes, delete</button>
+            <button class="alt" onclick="runD10cancel()">Cancel</button>
+          </div>
+          <div class="output" id="out-d10">// press delete account</div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/doms.js"></script>
+  </body>
+</html>

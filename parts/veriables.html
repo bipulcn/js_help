@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interactive Showcase</title>
+    <link rel="stylesheet" href="../css/design.css" />
+  </head>
+  <body>
+    <nav id="sidebar">
+      <h3>JS Demonstrations</h3>
+      <a href="veriables.html">1. Variables</a>
+      <a href="conditions.html">2. Conditionals</a>
+      <a href="loops.html">3. Loops</a>
+      <a href="selectors.html">4. Selectors</a>
+      <a href="doms.html">5. DOM</a>
+      <a href="functions.html">6. Functions</a>
+      <a href="objects.html">7. Objects</a>
+      <a href="events.html">8. Events</a>
+    </nav>
+
+    <main id="main">
+      <section id="sec-variables">
+        <h2>1. Variables & Expressions</h2>
+        <p class="sub">
+          Progressing from simple string storage to multi-variable formulas and
+          state mutation.
+        </p>
+        <div class="grid">
+          <div class="box">
+            <div class="box-header">
+              <span>1. Name Concatenation</span><span class="lvl">Level 1</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="v1" value="Sam" />
+              <button
+                onclick="
+                  document.getElementById('o1').innerText =
+                    'Hello, ' + document.getElementById('v1').value + '!'
+                "
+              >
+                Run
+              </button>
+            </div>
+            <div class="out" id="o1">Hello, Sam!</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>2. Click Counter</span><span class="lvl">Level 2</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  countVar++;
+                  document.getElementById('o2').innerText =
+                    'Count: ' + countVar;
+                "
+              >
+                Add (+1)
+              </button>
+              <button
+                onclick="
+                  countVar = 0;
+                  document.getElementById('o2').innerText = 'Count: 0';
+                "
+              >
+                Reset
+              </button>
+            </div>
+            <div class="out" id="o2">Count: 0</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>3. Age to Days</span><span class="lvl">Level 3</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="v3" value="20" placeholder="Years" />
+              <button
+                onclick="
+                  document.getElementById('o3').innerText =
+                    document.getElementById('v3').value * 365 + ' Days'
+                "
+              >
+                Convert
+              </button>
+            </div>
+            <div class="out" id="o3">7300 Days</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>4. Speed Converter</span><span class="lvl">Level 4</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="v4" value="100" placeholder="KM/h" />
+              <button
+                onclick="
+                  document.getElementById('o4').innerText =
+                    (document.getElementById('v4').value * 0.621371).toFixed(
+                      1,
+                    ) + ' MPH'
+                "
+              >
+                Calculate
+              </button>
+            </div>
+            <div class="out" id="o4">62.1 MPH</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>5. Tip & Split</span><span class="lvl">Level 5</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="v5-bill" value="50" placeholder="Bill" />
+              <input
+                type="number"
+                id="v5-people"
+                value="2"
+                placeholder="Guests"
+              />
+              <button
+                onclick="
+                  let t = document.getElementById('v5-bill').value * 1.15;
+                  document.getElementById('o5').innerText =
+                    '$' +
+                    (t / document.getElementById('v5-people').value).toFixed(
+                      2,
+                    ) +
+                    ' each';
+                "
+              >
+                Split
+              </button>
+            </div>
+            <div class="out" id="o5">$28.75 each</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>6. Word & Char Inspector</span
+              ><span class="lvl">Level 6</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="v6" value="Web Dev" />
+              <button
+                onclick="
+                  let s = document.getElementById('v6').value;
+                  document.getElementById('o6').innerText =
+                    s.length +
+                    ' chars | ' +
+                    (s.trim() ? s.trim().split(/\s+/).length : 0) +
+                    ' words';
+                "
+              >
+                Inspect
+              </button>
+            </div>
+            <div class="out" id="o6">7 chars | 2 words</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>7. Variable Value Swap</span
+              ><span class="lvl">Level 7</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  let temp = swapA;
+                  swapA = swapB;
+                  swapB = temp;
+                  document.getElementById('o7').innerText =
+                    'Box A: ' + swapA + ' | Box B: ' + swapB;
+                "
+              >
+                Swap Values
+              </button>
+            </div>
+            <div class="out" id="o7">Box A: Red | Box B: Blue</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>8. Salary Breakdown</span><span class="lvl">Level 8</span>
+            </div>
+            <div class="controls">
+              <input
+                type="number"
+                id="v8"
+                value="60000"
+                placeholder="Annual $"
+              />
+              <button
+                onclick="
+                  let a = document.getElementById('v8').value;
+                  document.getElementById('o8').innerText =
+                    '$' +
+                    (a / 12).toFixed(0) +
+                    '/mo | $' +
+                    (a / 52).toFixed(0) +
+                    '/wk';
+                "
+              >
+                Run
+              </button>
+            </div>
+            <div class="out" id="o8">$5000/mo | $1154/wk</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>9. Compound Savings</span><span class="lvl">Level 9</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="v9-p" value="1000" placeholder="$" />
+              <input type="number" id="v9-r" value="5" placeholder="%" />
+              <button
+                onclick="
+                  let p = +document.getElementById('v9-p').value,
+                    r = +document.getElementById('v9-r').value / 100;
+                  document.getElementById('o9').innerText =
+                    '3 Years: $' + (p * Math.pow(1 + r, 3)).toFixed(2);
+                "
+              >
+                Forecast
+              </button>
+            </div>
+            <div class="out" id="o9">3 Years: $1157.63</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>10. Hex to RGB Parser</span
+              ><span class="lvl">Level 10</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="v10" value="#38bdf8" />
+              <button onclick="runHexConvert()">Parse</button>
+            </div>
+            <div class="out" id="o10">rgb(56, 189, 248)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 1. VARIABLES ============ -->
+      <section class="topic" id="variables" style="--accent: #159473">
+        <div class="topic-head">
+          <span class="topic-n">01</span>
+          <h2>Variables &amp; data types</h2>
+        </div>
+        <p class="topic-blurb">
+          A variable is a labelled box holding a value. Ten everyday scenarios
+          where you'd reach for one.
+        </p>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Price tag for a product</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Store a product's name and price in variables and display them
+            together.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="v1-name"
+              value="Notebook"
+              style="width: 110px"
+            /><input
+              type="number"
+              id="v1-price"
+              value="120"
+              style="width: 80px"
+            /><button onclick="runV1()">Show tag</button>
+          </div>
+          <div class="output" id="out-v1">// enter a product and price</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Combine a full name</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Two variables joined into one — a common signup-form pattern.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="v2-first"
+              value="Ayesha"
+              style="width: 100px"
+            /><input
+              type="text"
+              id="v2-last"
+              value="Rahman"
+              style="width: 100px"
+            /><button onclick="runV2()">Combine</button>
+          </div>
+          <div class="output" id="out-v2">// enter first and last name</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Celsius → Fahrenheit</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            A weather app converting temperature with a formula stored in
+            variables.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="v3-c"
+              value="30"
+              style="width: 80px"
+            /><button onclick="runV3()">Convert</button>
+          </div>
+          <div class="output" id="out-v3">// enter °C</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Age from birth year</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Registration forms often compute age instead of asking for it
+            directly.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="v4-year"
+              value="2008"
+              style="width: 90px"
+            /><button onclick="runV4()">Calculate age</button>
+          </div>
+          <div class="output" id="out-v4">// enter a birth year</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">BMI calculator</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Two numeric variables combined with a formula, like a health app
+            would.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="v5-w"
+              value="60"
+              placeholder="kg"
+              style="width: 80px"
+            /><input
+              type="number"
+              id="v5-h"
+              value="165"
+              placeholder="cm"
+              style="width: 80px"
+            /><button onclick="runV5()">Calculate BMI</button>
+          </div>
+          <div class="output" id="out-v5">
+            // enter weight (kg) and height (cm)
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Simple interest calculator</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            A savings calculator: principal, rate and time stored as separate
+            variables.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="v6-p"
+              value="10000"
+              style="width: 90px"
+            /><input
+              type="number"
+              id="v6-r"
+              value="5"
+              placeholder="%/yr"
+              style="width: 70px"
+            /><input
+              type="number"
+              id="v6-t"
+              value="3"
+              placeholder="years"
+              style="width: 70px"
+            /><button onclick="runV6()">Calculate</button>
+          </div>
+          <div class="output" id="out-v6">// principal, rate %, years</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Currency converter</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Multiply an amount by an exchange-rate variable — the core of any
+            currency widget.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="v7-usd"
+              value="50"
+              style="width: 80px"
+            /><span class="pill">USD → BDT</span
+            ><button onclick="runV7()">Convert</button>
+          </div>
+          <div class="output" id="out-v7">// rate used: 1 USD = 122 BDT</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Light switch flag</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            A boolean variable tracking on/off state, like a smart-home app.
+          </p>
+          <div class="row">
+            <span class="dot" id="v8-dot"></span
+            ><button onclick="runV8()">Flip switch</button>
+          </div>
+          <div class="output" id="out-v8">// isOn = false</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Locking a tax rate</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            A store's tax rate is set with <span class="mono">const</span> so a
+            bug can't accidentally change it mid-checkout.
+          </p>
+          <div class="row">
+            <button onclick="runV9(false)">Update cart count (let)</button
+            ><button class="alt" onclick="runV9(true)">
+              Update tax rate (const)
+            </button>
+          </div>
+          <div class="output" id="out-v9">// cartCount: 3 | TAX_RATE: 0.05</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Cart total gone wrong</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            A quantity typed into a form field arrives as text, not a number — a
+            classic checkout bug.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="v10-qty"
+              value="3"
+              style="width: 60px"
+            /><button onclick="runV10()">Add to cart (buggy)</button
+            ><button class="alt" onclick="runV10fix()">
+              Add to cart (fixed)
+            </button>
+          </div>
+          <div class="output" id="out-v10">
+            // quantity comes from a text input
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/veriables.js"></script>
+  </body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interactive Showcase</title>
+    <link rel="stylesheet" href="../css/design.css" />
+  </head>
+  <body>
+    <nav id="sidebar">
+      <h3>JS Demonstrations</h3>
+      <a href="veriables.html">1. Variables</a>
+      <a href="conditions.html">2. Conditionals</a>
+      <a href="loops.html">3. Loops</a>
+      <a href="selectors.html">4. Selectors</a>
+      <a href="doms.html">5. DOM</a>
+      <a href="functions.html">6. Functions</a>
+      <a href="objects.html">7. Objects</a>
+      <a href="events.html">8. Events</a>
+    </nav>
+
+    <main id="main">
+      <section id="sec-objects">
+        <h2>6. Objects & Data Structures</h2>
+        <p class="sub">
+          Progressing from property lookups to object methods, nested payloads,
+          and array aggregation.
+        </p>
+        <div class="grid">
+          <div class="box">
+            <div class="box-header">
+              <span>1. User Profile Record</span
+              ><span class="lvl">Level 1</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  let u = { name: 'Jane', role: 'Architect' };
+                  document.getElementById('o1-o').innerText =
+                    u.name + ' - ' + u.role;
+                "
+              >
+                Extract
+              </button>
+            </div>
+            <div class="out" id="o1-o">Jane - Architect</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>2. Car Specs Object</span><span class="lvl">Level 2</span>
+            </div>
+            <div class="controls">
+              <select id="o2-prop">
+                <option value="make">Make</option>
+                <option value="model">Model</option>
+                <option value="hp">Horsepower</option>
+              </select>
+              <button
+                onclick="
+                  let car = { make: 'Tesla', model: 'Model 3', hp: 283 };
+                  document.getElementById('o2-o').innerText =
+                    car[document.getElementById('o2-prop').value];
+                "
+              >
+                Lookup
+              </button>
+            </div>
+            <div class="out" id="o2-o">Tesla</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>3. Object Method Action</span
+              ><span class="lvl">Level 3</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  accountObj.deposit(25);
+                  document.getElementById('o3-o').innerText =
+                    accountObj.describe();
+                "
+              >
+                +$25 Deposit
+              </button>
+            </div>
+            <div class="out" id="o3-o">Balance: $200</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>4. Dictionary Lexicon</span><span class="lvl">Level 4</span>
+            </div>
+            <div class="controls">
+              <select id="o4-code">
+                <option value="404">404</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+              </select>
+              <button
+                onclick="
+                  let http = {
+                    200: 'OK',
+                    404: 'Not Found',
+                    500: 'Server Error',
+                  };
+                  document.getElementById('o4-o').innerText =
+                    http[document.getElementById('o4-code').value];
+                "
+              >
+                Translate
+              </button>
+            </div>
+            <div class="out" id="o4-o">Not Found</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>5. Item Discount Method</span
+              ><span class="lvl">Level 5</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  let prod = {
+                    name: 'Headphones',
+                    price: 150,
+                    getSale: function () {
+                      return this.price * 0.8;
+                    },
+                  };
+                  document.getElementById('o5-o').innerText =
+                    prod.name + ' on Sale: $' + prod.getSale();
+                "
+              >
+                Compute
+              </button>
+            </div>
+            <div class="out" id="o5-o">Headphones on Sale: $120</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>6. Interactive Quiz Object</span
+              ><span class="lvl">Level 6</span>
+            </div>
+            <div class="controls">
+              <button onclick="evalQuiz(0)">Madrid</button>
+              <button onclick="evalQuiz(1)">Paris</button>
+            </div>
+            <div class="out" id="o6-o">Capital of France?</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>7. Key / Value Lister</span><span class="lvl">Level 7</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  let config = { theme: 'Light', zoom: '100%', sound: true };
+                  document.getElementById('o7-o').innerText = Object.entries(
+                    config,
+                  )
+                    .map(([k, v]) => k + ': ' + v)
+                    .join(' | ');
+                "
+              >
+                Display
+              </button>
+            </div>
+            <div class="out" id="o7-o">
+              theme: Light | zoom: 100% | sound: true
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>8. Filter Objects Array</span
+              ><span class="lvl">Level 8</span>
+            </div>
+            <div class="controls">
+              <select id="o8-dept" onchange="runFilterStaff(this.value)">
+                <option value="All">All Departments</option>
+                <option value="Tech">Tech</option>
+                <option value="Design">Design</option>
+              </select>
+            </div>
+            <div class="out" id="o8-o">Tech: 2 Staff | Design: 1 Staff</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>9. Cart Aggregation</span><span class="lvl">Level 9</span>
+            </div>
+            <div class="controls">
+              <button onclick="calcInvoice()">Calculate Total</button>
+            </div>
+            <div class="out" id="o9-o">3 Items | Grand Total: $74.50</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>10. Form to Model Parser</span
+              ><span class="lvl">Level 10</span>
+            </div>
+            <div class="controls">
+              <input
+                type="text"
+                id="o10-k"
+                value="status"
+                style="width: 50px"
+              />
+              <input
+                type="text"
+                id="o10-v"
+                value="shipped"
+                style="width: 50px"
+              />
+              <button onclick="buildDynamicJSON()">Export</button>
+            </div>
+            <div class="out" id="o10-o" style="font-family: monospace">
+              {"status":"shipped"}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 7. OBJECTS & ARRAYS ============ -->
+      <section class="topic" id="objects" style="--accent: #b4740f">
+        <div class="topic-head">
+          <span class="topic-n">07</span>
+          <h2>Objects &amp; arrays</h2>
+        </div>
+        <p class="topic-blurb">
+          Objects group related data; arrays hold ordered lists, often of
+          objects. Ten real records.
+        </p>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Read a user profile</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Dot notation reads values out of an object by key.
+          </p>
+          <div class="row">
+            <button onclick="runO1()">Read profile</button>
+          </div>
+          <div class="output" id="out-o1">// { name, email, plan }</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Read a product listing</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            The same pattern, applied to an item in a store.
+          </p>
+          <div class="row">
+            <button onclick="runO2()">Read product</button>
+          </div>
+          <div class="output" id="out-o2">// { name, price, inStock }</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Update stock count</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Changes one property on an object without touching the rest.
+          </p>
+          <div class="row">
+            <span class="pill" id="o3-stock">stock: 8</span
+            ><button onclick="runO3()">Sell one</button>
+          </div>
+          <div class="output" id="out-o3">// press to sell one unit</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Find a contact by name</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Searches an array of contact objects for one matching name.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="o4-name"
+              value="Tanvir"
+              style="width: 110px"
+            /><button onclick="runO4()">Find contact</button>
+          </div>
+          <div class="output" id="out-o4">
+            // contacts: Tanvir, Nusrat, Farhan
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Bank account object</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            An object with its own <span class="mono">deposit</span> /
+            <span class="mono">withdraw</span> methods.
+          </p>
+          <div class="box">
+            balance: <strong id="o5-balance">৳1,000</strong>
+          </div>
+          <div class="row">
+            <input
+              type="number"
+              id="o5-amt"
+              value="200"
+              style="width: 80px"
+            /><button onclick="runO5('deposit')">Deposit</button
+            ><button class="alt" onclick="runO5('withdraw')">Withdraw</button>
+          </div>
+          <div class="output" id="out-o5">// pick an amount</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Filter in-stock products</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Keeps only the objects in an array where a property is true.
+          </p>
+          <div class="row">
+            <button onclick="runO6()">Show in-stock</button>
+          </div>
+          <div class="output" id="out-o6">// 4 products, some out of stock</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Sort contacts A–Z</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Sorts an array of objects by one of their properties.
+          </p>
+          <div class="row">
+            <button onclick="runO7()">Sort contacts</button>
+          </div>
+          <div class="output" id="out-o7">// contacts: Zayan, Amina, Kabir</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Cart total with reduce</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Sums <span class="mono">price × quantity</span> across an array of
+            cart-item objects.
+          </p>
+          <div class="row"><button onclick="runO8()">Total cart</button></div>
+          <div class="output" id="out-o8">
+            // 3 items, each with price &amp; quantity
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Nested order object</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            An order object containing another object for shipping address.
+          </p>
+          <div class="row"><button onclick="runO9()">Read order</button></div>
+          <div class="output" id="out-o9">// order.shipping.city</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Destructure user info</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            Pulls several properties out of an object into their own variables
+            at once.
+          </p>
+          <div class="row">
+            <button onclick="runO10()">Destructure</button>
+          </div>
+          <div class="output" id="out-o10">
+            // const { name, email } = user;
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/objects.js"></script>
+  </body>
+</html>

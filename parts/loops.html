@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interactive Showcase</title>
+    <link rel="stylesheet" href="../css/design.css" />
+  </head>
+  <body>
+    <nav id="sidebar">
+      <h3>JS Demonstrations</h3>
+      <a href="veriables.html">1. Variables</a>
+      <a href="conditions.html">2. Conditionals</a>
+      <a href="loops.html">3. Loops</a>
+      <a href="selectors.html">4. Selectors</a>
+      <a href="doms.html">5. DOM</a>
+      <a href="functions.html">6. Functions</a>
+      <a href="objects.html">7. Objects</a>
+      <a href="events.html">8. Events</a>
+    </nav>
+
+    <main id="main">
+      <section id="sec-loops">
+        <h2>3. Loops & Iteration</h2>
+        <p class="sub">
+          Progressing from incremental generation to collections,
+          transformations, and coordinate grids.
+        </p>
+        <div class="grid">
+          <div class="box">
+            <div class="box-header">
+              <span>1. Times Table</span><span class="lvl">Level 1</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="l1" value="3" style="width: 40px" />
+              <button
+                onclick="
+                  let res = '';
+                  for (let i = 1; i <= 5; i++)
+                    res += document.getElementById('l1').value * i + ' ';
+                  document.getElementById('o1-l').innerText = res;
+                "
+              >
+                Generate
+              </button>
+            </div>
+            <div class="out" id="o1-l">3 6 9 12 15</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>2. Blastoff Countdown</span><span class="lvl">Level 2</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="l2" value="5" style="width: 40px" />
+              <button
+                onclick="
+                  let s = '';
+                  for (let i = document.getElementById('l2').value; i > 0; i--)
+                    s += i + '.. ';
+                  document.getElementById('o2-l').innerText = s + 'Liftoff!';
+                "
+              >
+                Launch
+              </button>
+            </div>
+            <div class="out" id="o2-l">5.. 4.. 3.. 2.. 1.. Liftoff!</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>3. Visual Star Emitter</span
+              ><span class="lvl">Level 3</span>
+            </div>
+            <div class="controls">
+              <input
+                type="number"
+                id="l3"
+                value="4"
+                min="1"
+                max="10"
+                style="width: 40px"
+              />
+              <button
+                onclick="
+                  let r = '';
+                  for (let i = 0; i < document.getElementById('l3').value; i++)
+                    r += '★';
+                  document.getElementById('o3-l').innerText = r;
+                "
+              >
+                Draw
+              </button>
+            </div>
+            <div class="out" id="o3-l" style="color: #f59e0b">★★★★</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>4. Arithmetic Accumulator</span
+              ><span class="lvl">Level 4</span>
+            </div>
+            <div class="controls">
+              <input type="number" id="l4" value="10" placeholder="Up to" />
+              <button
+                onclick="
+                  let sum = 0;
+                  for (let i = 1; i <= document.getElementById('l4').value; i++)
+                    sum += i;
+                  document.getElementById('o4-l').innerText =
+                    'Sum 1 to N: ' + sum;
+                "
+              >
+                Sum
+              </button>
+            </div>
+            <div class="out" id="o4-l">Sum 1 to N: 55</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>5. Color Palette Iterator</span
+              ><span class="lvl">Level 5</span>
+            </div>
+            <div class="controls">
+              <button onclick="renderSwatches()">Render Palette</button>
+            </div>
+            <div class="out" id="o5-l" style="gap: 4px">
+              Palette will display here
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>6. Dynamic Tag List</span><span class="lvl">Level 6</span>
+            </div>
+            <div class="controls">
+              <button onclick="renderTags()">Render Tags</button>
+            </div>
+            <div class="out" id="o6-l" style="gap: 4px; flex-wrap: wrap">
+              Ready to build
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>7. Coin Toss Loop</span><span class="lvl">Level 7</span>
+            </div>
+            <div class="controls">
+              <button onclick="runCoinStreak()">Flip until Heads</button>
+            </div>
+            <div class="out" id="o7-l">Flips: Ready</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>8. Even Number Extractor</span
+              ><span class="lvl">Level 8</span>
+            </div>
+            <div class="controls">
+              <button
+                onclick="
+                  let a = [12, 5, 8, 130, 44, 9],
+                    ev = [];
+                  for (let n of a) if (n % 2 === 0) ev.push(n);
+                  document.getElementById('o8-l').innerText = ev.join(', ');
+                "
+              >
+                Filter Evens
+              </button>
+            </div>
+            <div class="out" id="o8-l">12, 8, 130, 44</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>9. String Character Reverser</span
+              ><span class="lvl">Level 9</span>
+            </div>
+            <div class="controls">
+              <input type="text" id="l9" value="JavaScript" />
+              <button
+                onclick="
+                  let txt = document.getElementById('l9').value,
+                    rev = '';
+                  for (let i = txt.length - 1; i >= 0; i--) rev += txt[i];
+                  document.getElementById('o9-l').innerText = rev;
+                "
+              >
+                Reverse
+              </button>
+            </div>
+            <div class="out" id="o9-l">tpircSavaJ</div>
+          </div>
+
+          <div class="box">
+            <div class="box-header">
+              <span>10. Matrix Seat Map</span><span class="lvl">Level 10</span>
+            </div>
+            <div class="controls">
+              <button onclick="runMatrixGen()">Generate Grid</button>
+            </div>
+            <div class="out" id="o10-l" style="font-size: 0.75rem">
+              A1 A2 A3 | B1 B2 B3
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 3. LOOPS ============ -->
+      <section class="topic" id="loops" style="--accent: #7c6cf0">
+        <div class="topic-head">
+          <span class="topic-n">03</span>
+          <h2>Loops</h2>
+        </div>
+        <p class="topic-blurb">
+          Loops repeat work so you don't have to write it out by hand — ten
+          times it saves the day.
+        </p>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Times table</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            A classic <span class="mono">for</span> loop, counting 1 to 10.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="l1-n"
+              value="7"
+              style="width: 70px"
+            /><button onclick="runL1()">Build table</button>
+          </div>
+          <div class="output" id="out-l1">// pick a number</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Rocket countdown</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            A <span class="mono">while</span> loop counts down until a condition
+            is false.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="l2-n"
+              value="5"
+              min="1"
+              max="12"
+              style="width: 70px"
+            /><button onclick="runL2()">Launch</button>
+          </div>
+          <div class="output" id="out-l2">// starting number</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Shopping cart total</span
+            ><span class="badge simple">simple</span>
+          </div>
+          <p class="ex-desc">
+            Loops through a list of prices, adding them one by one.
+          </p>
+          <div class="row">
+            <button onclick="runL3()">Total the cart</button>
+          </div>
+          <div class="output" id="out-l3">
+            // cart: ৳120, ৳75, ৳340, ৳95, ৳60
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Weekly step counts</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            A fitness tracker printing a random step count for each of 7 days.
+          </p>
+          <div class="row">
+            <button onclick="runL4()">Generate week</button>
+          </div>
+          <div class="output" id="out-l4">
+            // press to simulate a week of step data
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Highest exam score</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Loops through a class list tracking the largest value seen so far.
+          </p>
+          <div class="row">
+            <button onclick="runL5()">Find highest</button>
+          </div>
+          <div class="output" id="out-l5">
+            // scores: 68, 91, 77, 85, 59, 94, 72
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Factorial calculator</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Multiplies a running total by each number counting down to 1.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="l6-n"
+              value="5"
+              min="1"
+              max="12"
+              style="width: 70px"
+            /><button onclick="runL6()">Calculate</button>
+          </div>
+          <div class="output" id="out-l6">// enter a whole number</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Password strength meter</span
+            ><span class="badge medium">medium</span>
+          </div>
+          <p class="ex-desc">
+            Loops through each typed character, counting letters, digits and
+            symbols.
+          </p>
+          <div class="row">
+            <input
+              type="text"
+              id="l7-pw"
+              placeholder="type a password"
+              style="width: 160px"
+              oninput="runL7()"
+            />
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" id="l7-bar"></div>
+          </div>
+          <div class="output" id="out-l7">// start typing</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">FizzBuzz generator</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            A classic loop puzzle: swap multiples of 3 and 5 for words instead
+            of numbers.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="l8-max"
+              value="20"
+              min="1"
+              max="50"
+              style="width: 70px"
+            /><button onclick="runL8()">Run FizzBuzz</button>
+          </div>
+          <div class="output" id="out-l8">
+            // counts up, replacing multiples of 3/5
+          </div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Checkerboard grid</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            A loop inside a loop paints rows and columns — the same idea behind
+            a seating chart.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="l9-size"
+              value="6"
+              min="2"
+              max="12"
+              style="width: 70px"
+            /><button onclick="runL9()">Paint grid</button>
+          </div>
+          <div class="grid-mini" id="l9-grid"></div>
+          <div class="output" id="out-l9">// choose a board size</div>
+        </div>
+
+        <div class="ex">
+          <div class="ex-head">
+            <span class="ex-title">Star pyramid</span
+            ><span class="badge tricky">tricky</span>
+          </div>
+          <p class="ex-desc">
+            Nested loops building up a row at a time — a common loop-logic
+            exercise.
+          </p>
+          <div class="row">
+            <input
+              type="number"
+              id="l10-rows"
+              value="5"
+              min="1"
+              max="10"
+              style="width: 70px"
+            /><button onclick="runL10()">Build pyramid</button>
+          </div>
+          <div class="output" id="out-l10">// pick a number of rows</div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/loops.js"></script>
+  </body>
+</html>
