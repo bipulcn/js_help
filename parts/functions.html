@@ -226,23 +226,19 @@
       </section>
 
       <!-- ============ 6. FUNCTIONS ============ -->
-      <section class="topic" id="functions" style="--accent: #159473">
-        <div class="topic-head">
-          <span class="topic-n">06</span>
-          <h2>Functions</h2>
-        </div>
-        <p class="topic-blurb">
+      <section id="functions">
+        <h2>Functions</h2>
+        <p class="sub">
           A function packages logic so you can reuse it — ten small reusable
           tools.
         </p>
-
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Greet a customer</span
-            ><span class="badge simple">simple</span>
+        <div class="grid">
+        <div class="box">
+          <div class="box-header">
+            <span>Greet a customer</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">One input in, one message out.</p>
-          <div class="row">
+          <p>One input in, one message out.</p>
+          <div class="controls">
             <input
               type="text"
               id="f1-name"
@@ -250,18 +246,17 @@
               style="width: 110px"
             /><button onclick="runF1()">Greet</button>
           </div>
-          <div class="output" id="out-f1">// enter a name</div>
+          <div class="out" id="out-f1">// enter a name</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Order total with tax</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Order total with tax</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             A function that always applies the same tax rate to any subtotal.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="f2-sub"
@@ -269,18 +264,17 @@
               style="width: 90px"
             /><button onclick="runF2()">Calculate total</button>
           </div>
-          <div class="output" id="out-f2">// enter a subtotal</div>
+          <div class="out" id="out-f2">// enter a subtotal</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Tip calculator</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Tip calculator</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Reusable across any bill amount and tip percentage.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="f3-bill"
@@ -293,18 +287,17 @@
               style="width: 60px"
             /><button onclick="runF3()">Add tip</button>
           </div>
-          <div class="output" id="out-f3">// bill, tip %</div>
+          <div class="out" id="out-f3">// bill, tip %</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Temperature converter</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Temperature converter</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Same formula as before, now wrapped as a reusable function.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="f4-f"
@@ -312,16 +305,15 @@
               style="width: 80px"
             /><button onclick="runF4()">°F → °C</button>
           </div>
-          <div class="output" id="out-f4">// enter °F</div>
+          <div class="out" id="out-f4">// enter °F</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Discount calculator</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Discount calculator</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">A function taking a price and a percentage off.</p>
-          <div class="row">
+          <p>A function taking a price and a percentage off.</p>
+          <div class="controls">
             <input
               type="number"
               id="f5-price"
@@ -334,19 +326,18 @@
               style="width: 60px"
             /><button onclick="runF5()">Apply discount</button>
           </div>
-          <div class="output" id="out-f5">// price, % off</div>
+          <div class="out" id="out-f5">// price, % off</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Password validator</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Password validator</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Returns true only if a password meets a minimum length and has a
             number.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="f6-pw"
@@ -354,19 +345,18 @@
               style="width: 150px"
             /><button onclick="runF6()">Validate</button>
           </div>
-          <div class="output" id="out-f6">// needs 8+ chars and a digit</div>
+          <div class="out" id="out-f6">// needs 8+ chars and a digit</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Filter products under a price</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Filter products under a price</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Passes a small function into
-            <span class="mono">.filter()</span> to keep only matches.
+            .filter() to keep only matches.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="f7-max"
@@ -374,55 +364,53 @@
               style="width: 80px"
             /><button onclick="runF7()">Filter</button>
           </div>
-          <div class="output" id="out-f7">
+          <div class="out" id="out-f7">
             // products: ৳120, ৳340, ৳80, ৳210, ৳95
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Convert prices with map</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Convert prices with map</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
-            <span class="mono">.map()</span> runs a function over every price to
+          <p>
+            .map() runs a function over every price to
             convert currency.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runF8()">Convert all to USD</button>
           </div>
-          <div class="output" id="out-f8">// prices in BDT: 610, 1220, 305</div>
+          <div class="out" id="out-f8">// prices in BDT: 610, 1220, 305</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Sum a cart with reduce</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Sum a cart with reduce</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
-            <span class="mono">.reduce()</span> collapses a whole array down to
+          <p>
+            .reduce() collapses a whole array down to
             one total.
           </p>
-          <div class="row"><button onclick="runF9()">Total cart</button></div>
-          <div class="output" id="out-f9">// items: 120, 340, 80, 210, 95</div>
+          <div class="controls"><button onclick="runF9()">Total cart</button></div>
+          <div class="out" id="out-f9">// items: 120, 340, 80, 210, 95</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Sort products by price</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Sort products by price</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             A comparator function tells
-            <span class="mono">.sort()</span> which item comes first.
+            .sort() which item comes first.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runF10('asc')">Low to high</button
-            ><button class="alt" onclick="runF10('desc')">High to low</button>
+            ><button onclick="runF10('desc')">High to low</button>
           </div>
-          <div class="output" id="out-f10">
+          <div class="out" id="out-f10">
             // products: Shirt ৳450, Cap ৳150, Shoes ৳900
           </div>
+        </div>
         </div>
       </section>
     </main>

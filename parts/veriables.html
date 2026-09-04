@@ -246,242 +246,230 @@
       </section>
 
       <!-- ============ 1. VARIABLES ============ -->
-      <section class="topic" id="variables" style="--accent: #159473">
-        <div class="topic-head">
-          <span class="topic-n">01</span>
-          <h2>Variables &amp; data types</h2>
-        </div>
-        <p class="topic-blurb">
+      <section id="variables">
+        <h2>Variables &amp; data types</h2>
+        <p class="sub">
           A variable is a labelled box holding a value. Ten everyday scenarios
           where you'd reach for one.
         </p>
+        <div class="grid">
+          <div class="box">
+            <div class="box-header">
+              <span>Price tag for a product</span><span class="lvl">simple</span>
+            </div>
+            <p>
+              Store a product's name and price in variables and display them
+              together.
+            </p>
+            <div class="controls">
+              <input
+                type="text"
+                id="v1-name"
+                value="Notebook"
+                style="width: 110px"
+              /><input
+                type="number"
+                id="v1-price"
+                value="120"
+                style="width: 80px"
+              /><button onclick="runV1()">Show tag</button>
+            </div>
+            <div class="out" id="out-v1">// enter a product and price</div>
+          </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Price tag for a product</span
-            ><span class="badge simple">simple</span>
+          <div class="box">
+            <div class="box-header">
+              <span>Combine a full name</span><span class="lvl">simple</span>
+            </div>
+            <p>
+              Two variables joined into one — a common signup-form pattern.
+            </p>
+            <div class="controls">
+              <input
+                type="text"
+                id="v2-first"
+                value="Ayesha"
+                style="width: 100px"
+              /><input
+                type="text"
+                id="v2-last"
+                value="Rahman"
+                style="width: 100px"
+              /><button onclick="runV2()">Combine</button>
+            </div>
+            <div class="out" id="out-v2">// enter first and last name</div>
           </div>
-          <p class="ex-desc">
-            Store a product's name and price in variables and display them
-            together.
-          </p>
-          <div class="row">
-            <input
-              type="text"
-              id="v1-name"
-              value="Notebook"
-              style="width: 110px"
-            /><input
-              type="number"
-              id="v1-price"
-              value="120"
-              style="width: 80px"
-            /><button onclick="runV1()">Show tag</button>
-          </div>
-          <div class="output" id="out-v1">// enter a product and price</div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Combine a full name</span
-            ><span class="badge simple">simple</span>
+          <div class="box">
+            <div class="box-header">
+              <span>Celsius → Fahrenheit</span><span class="lvl">simple</span>
+            </div>
+            <p>
+              A weather app converting temperature with a formula stored in
+              variables.
+            </p>
+            <div class="controls">
+              <input
+                type="number"
+                id="v3-c"
+                value="30"
+                style="width: 80px"
+              /><button onclick="runV3()">Convert</button>
+            </div>
+            <div class="out" id="out-v3">// enter °C</div>
           </div>
-          <p class="ex-desc">
-            Two variables joined into one — a common signup-form pattern.
-          </p>
-          <div class="row">
-            <input
-              type="text"
-              id="v2-first"
-              value="Ayesha"
-              style="width: 100px"
-            /><input
-              type="text"
-              id="v2-last"
-              value="Rahman"
-              style="width: 100px"
-            /><button onclick="runV2()">Combine</button>
-          </div>
-          <div class="output" id="out-v2">// enter first and last name</div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Celsius → Fahrenheit</span
-            ><span class="badge simple">simple</span>
+          <div class="box">
+            <div class="box-header">
+              <span>Age from birth year</span><span class="lvl">simple</span>
+            </div>
+            <p>
+              Registration forms often compute age instead of asking for it
+              directly.
+            </p>
+            <div class="controls">
+              <input
+                type="number"
+                id="v4-year"
+                value="2008"
+                style="width: 90px"
+              /><button onclick="runV4()">Calculate age</button>
+            </div>
+            <div class="out" id="out-v4">// enter a birth year</div>
           </div>
-          <p class="ex-desc">
-            A weather app converting temperature with a formula stored in
-            variables.
-          </p>
-          <div class="row">
-            <input
-              type="number"
-              id="v3-c"
-              value="30"
-              style="width: 80px"
-            /><button onclick="runV3()">Convert</button>
-          </div>
-          <div class="output" id="out-v3">// enter °C</div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Age from birth year</span
-            ><span class="badge simple">simple</span>
+          <div class="box">
+            <div class="box-header">
+              <span>BMI calculator</span><span class="lvl">medium</span>
+            </div>
+            <p>
+              Two numeric variables combined with a formula, like a health app
+              would.
+            </p>
+            <div class="controls">
+              <input
+                type="number"
+                id="v5-w"
+                value="60"
+                placeholder="kg"
+                style="width: 80px"
+              /><input
+                type="number"
+                id="v5-h"
+                value="165"
+                placeholder="cm"
+                style="width: 80px"
+              /><button onclick="runV5()">Calculate BMI</button>
+            </div>
+            <div class="out" id="out-v5">
+              // enter weight (kg) and height (cm)
+            </div>
           </div>
-          <p class="ex-desc">
-            Registration forms often compute age instead of asking for it
-            directly.
-          </p>
-          <div class="row">
-            <input
-              type="number"
-              id="v4-year"
-              value="2008"
-              style="width: 90px"
-            /><button onclick="runV4()">Calculate age</button>
-          </div>
-          <div class="output" id="out-v4">// enter a birth year</div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">BMI calculator</span
-            ><span class="badge medium">medium</span>
+          <div class="box">
+            <div class="box-header">
+              <span>Simple interest calculator</span><span class="lvl">medium</span>
+            </div>
+            <p>
+              A savings calculator: principal, rate and time stored as separate
+              variables.
+            </p>
+            <div class="controls">
+              <input
+                type="number"
+                id="v6-p"
+                value="10000"
+                style="width: 90px"
+              /><input
+                type="number"
+                id="v6-r"
+                value="5"
+                placeholder="%/yr"
+                style="width: 70px"
+              /><input
+                type="number"
+                id="v6-t"
+                value="3"
+                placeholder="years"
+                style="width: 70px"
+              /><button onclick="runV6()">Calculate</button>
+            </div>
+            <div class="out" id="out-v6">// principal, rate %, years</div>
           </div>
-          <p class="ex-desc">
-            Two numeric variables combined with a formula, like a health app
-            would.
-          </p>
-          <div class="row">
-            <input
-              type="number"
-              id="v5-w"
-              value="60"
-              placeholder="kg"
-              style="width: 80px"
-            /><input
-              type="number"
-              id="v5-h"
-              value="165"
-              placeholder="cm"
-              style="width: 80px"
-            /><button onclick="runV5()">Calculate BMI</button>
-          </div>
-          <div class="output" id="out-v5">
-            // enter weight (kg) and height (cm)
-          </div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Simple interest calculator</span
-            ><span class="badge medium">medium</span>
+          <div class="box">
+            <div class="box-header">
+              <span>Currency converter</span><span class="lvl">medium</span>
+            </div>
+            <p>
+              Multiply an amount by an exchange-rate variable — the core of any
+              currency widget.
+            </p>
+            <div class="controls">
+              <input
+                type="number"
+                id="v7-usd"
+                value="50"
+                style="width: 80px"
+              /><span class="tag">USD → BDT</span
+              ><button onclick="runV7()">Convert</button>
+            </div>
+            <div class="out" id="out-v7">// rate used: 1 USD = 122 BDT</div>
           </div>
-          <p class="ex-desc">
-            A savings calculator: principal, rate and time stored as separate
-            variables.
-          </p>
-          <div class="row">
-            <input
-              type="number"
-              id="v6-p"
-              value="10000"
-              style="width: 90px"
-            /><input
-              type="number"
-              id="v6-r"
-              value="5"
-              placeholder="%/yr"
-              style="width: 70px"
-            /><input
-              type="number"
-              id="v6-t"
-              value="3"
-              placeholder="years"
-              style="width: 70px"
-            /><button onclick="runV6()">Calculate</button>
-          </div>
-          <div class="output" id="out-v6">// principal, rate %, years</div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Currency converter</span
-            ><span class="badge medium">medium</span>
+          <div class="box">
+            <div class="box-header">
+              <span>Light switch flag</span><span class="lvl">medium</span>
+            </div>
+            <p>
+              A boolean variable tracking on/off state, like a smart-home app.
+            </p>
+            <div class="controls">
+              <span class="dot" id="v8-dot"></span
+              ><button onclick="runV8()">Flip switch</button>
+            </div>
+            <div class="out" id="out-v8">// isOn = false</div>
           </div>
-          <p class="ex-desc">
-            Multiply an amount by an exchange-rate variable — the core of any
-            currency widget.
-          </p>
-          <div class="row">
-            <input
-              type="number"
-              id="v7-usd"
-              value="50"
-              style="width: 80px"
-            /><span class="pill">USD → BDT</span
-            ><button onclick="runV7()">Convert</button>
-          </div>
-          <div class="output" id="out-v7">// rate used: 1 USD = 122 BDT</div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Light switch flag</span
-            ><span class="badge medium">medium</span>
+          <div class="box">
+            <div class="box-header">
+              <span>Locking a tax rate</span><span class="lvl">tricky</span>
+            </div>
+            <p>
+              A store's tax rate is set with <code>const</code> so a
+              bug can't accidentally change it mid-checkout.
+            </p>
+            <div class="controls">
+              <button onclick="runV9(false)">Update cart count (let)</button>
+              <button onclick="runV9(true)">
+                Update tax rate (const)
+              </button>
+            </div>
+            <div class="out" id="out-v9">// cartCount: 3 | TAX_RATE: 0.05</div>
           </div>
-          <p class="ex-desc">
-            A boolean variable tracking on/off state, like a smart-home app.
-          </p>
-          <div class="row">
-            <span class="dot" id="v8-dot"></span
-            ><button onclick="runV8()">Flip switch</button>
-          </div>
-          <div class="output" id="out-v8">// isOn = false</div>
-        </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Locking a tax rate</span
-            ><span class="badge tricky">tricky</span>
-          </div>
-          <p class="ex-desc">
-            A store's tax rate is set with <span class="mono">const</span> so a
-            bug can't accidentally change it mid-checkout.
-          </p>
-          <div class="row">
-            <button onclick="runV9(false)">Update cart count (let)</button
-            ><button class="alt" onclick="runV9(true)">
-              Update tax rate (const)
-            </button>
-          </div>
-          <div class="output" id="out-v9">// cartCount: 3 | TAX_RATE: 0.05</div>
-        </div>
-
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Cart total gone wrong</span
-            ><span class="badge tricky">tricky</span>
-          </div>
-          <p class="ex-desc">
-            A quantity typed into a form field arrives as text, not a number — a
-            classic checkout bug.
-          </p>
-          <div class="row">
-            <input
-              type="text"
-              id="v10-qty"
-              value="3"
-              style="width: 60px"
-            /><button onclick="runV10()">Add to cart (buggy)</button
-            ><button class="alt" onclick="runV10fix()">
-              Add to cart (fixed)
-            </button>
-          </div>
-          <div class="output" id="out-v10">
-            // quantity comes from a text input
+          <div class="box">
+            <div class="box-header">
+              <span>Cart total gone wrong</span><span class="lvl">tricky</span>
+            </div>
+            <p>
+              A quantity typed into a form field arrives as text, not a number — a
+              classic checkout bug.
+            </p>
+            <div class="controls">
+              <input
+                type="text"
+                id="v10-qty"
+                value="3"
+                style="width: 60px"
+              /><button onclick="runV10()">Add to cart (buggy)</button>
+              <button onclick="runV10fix()">
+                Add to cart (fixed)
+              </button>
+            </div>
+            <div class="out" id="out-v10">
+              // quantity comes from a text input
+            </div>
           </div>
         </div>
       </section>

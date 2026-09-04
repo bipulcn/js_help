@@ -22,38 +22,33 @@
 
     <main id="main">
       <!-- ============ 8. EVENTS ============ -->
-      <section class="topic" id="events" style="--accent: #7c6cf0">
-        <div class="topic-head">
-          <span class="topic-n">08</span>
-          <h2>Events</h2>
-        </div>
-        <p class="topic-blurb">
+      <section id="events">
+        <h2>Events</h2>
+        <p class="sub">
           Events are how a page reacts to a person using it. Everything above
           already used one — here are ten more, named.
         </p>
-
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Click: add to cart</span
-            ><span class="badge simple">simple</span>
+        <div class="grid">
+        <div class="box">
+          <div class="box-header">
+            <span>Click: add to cart</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">The most common event of all.</p>
-          <div class="row">
-            <span class="pill" id="e1-count">cart: 0</span
+          <p>The most common event of all.</p>
+          <div class="controls">
+            <span class="tag" id="e1-count">cart: 0</span
             ><button onclick="runE1()">Add to cart</button>
           </div>
-          <div class="output" id="out-e1">// click a few times</div>
+          <div class="out" id="out-e1">// click a few times</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Double-click: like a post</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Double-click: like a post</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             A different event than a single click — used by photo apps.
           </p>
-          <div class="row">
+          <div class="controls">
             <div
               class="box"
               id="e2-post"
@@ -63,21 +58,20 @@
               📷 Double-click this photo
             </div>
           </div>
-          <div class="output" id="out-e2">// double-click the photo</div>
+          <div class="out" id="out-e2">// double-click the photo</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Hover: preview a product</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Hover: preview a product</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
-            <span class="mono">mouseover</span> /
-            <span class="mono">mouseout</span> show and hide a preview.
+          <p>
+            mouseover /
+            mouseout show and hide a preview.
           </p>
-          <div class="row">
+          <div class="controls">
             <div
-              class="pill"
+              class="tag"
               onmouseover="runE3(true)"
               onmouseout="runE3(false)"
               style="cursor: pointer"
@@ -85,19 +79,18 @@
               Hover: Running Shoes
             </div>
           </div>
-          <div class="output" id="out-e3">// hover the pill</div>
+          <div class="out" id="out-e3">// hover the tag</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Typing: live search filter</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Typing: live search filter</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Filters a list as each keystroke fires an
-            <span class="mono">input</span> event.
+            input event.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="e4-search"
@@ -106,40 +99,38 @@
               oninput="runE4()"
             />
           </div>
-          <div class="output" id="out-e4">
+          <div class="out" id="out-e4">
             // list: Apple, Banana, Mango, Grapes, Melon
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Change: update displayed price</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Change: update displayed price</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
-            A dropdown's <span class="mono">change</span> event updates the page
+          <p>
+            A dropdown's change event updates the page
             instantly.
           </p>
-          <div class="row">
+          <div class="controls">
             <select id="e5-size" onchange="runE5()">
               <option value="S">Small — ৳300</option>
               <option value="M">Medium — ৳400</option>
               <option value="L">Large — ৳500</option>
             </select>
           </div>
-          <div class="output" id="out-e5">Small — ৳300</div>
+          <div class="out" id="out-e5">Small — ৳300</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Submit: validate a form</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Submit: validate a form</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
-            Catches the form's <span class="mono">submit</span> event to check
+          <p>
+            Catches the form's submit event to check
             the fields first.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="e6-email"
@@ -147,21 +138,20 @@
               style="width: 170px"
             /><button onclick="runE6()">Submit</button>
           </div>
-          <div class="output" id="out-e6">
+          <div class="out" id="out-e6">
             // try submitting empty, then with an email
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Focus / blur: highlight active field</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Focus / blur: highlight active field</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Fires when an input gains or loses focus, like most styled login
             forms.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="e7-field"
@@ -171,20 +161,19 @@
               onblur="runE7(false)"
             />
           </div>
-          <div class="output" id="out-e7">// click in, then click away</div>
+          <div class="out" id="out-e7">// click in, then click away</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Press &amp; hold a button</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Press &amp; hold a button</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
-            <span class="mono">mousedown</span> and
-            <span class="mono">mouseup</span> together, like a walkie-talkie
+          <p>
+            mousedown and
+            mouseup together, like a walkie-talkie
             button.
           </p>
-          <div class="row">
+          <div class="controls">
             <button
               onmousedown="runE8(true)"
               onmouseup="runE8(false)"
@@ -193,18 +182,17 @@
               Hold to record
             </button>
           </div>
-          <div class="output" id="out-e8">// press and hold, then release</div>
+          <div class="out" id="out-e8">// press and hold, then release</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Keyboard shortcut: Enter to submit</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Keyboard shortcut: Enter to submit</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Listens for a specific key rather than any input at all.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="e9-msg"
@@ -213,24 +201,24 @@
               onkeydown="runE9(event)"
             />
           </div>
-          <div class="output" id="out-e9">// press Enter after typing</div>
+          <div class="out" id="out-e9">// press Enter after typing</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Live clock</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Live clock</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             A timer repeatedly updates the page without any click at all — the
             same idea behind a live dashboard.
           </p>
-          <div class="row">
-            <span class="pill" id="e10-clock">--:--:--</span
+          <div class="controls">
+            <span class="tag" id="e10-clock">--:--:--</span
             ><button onclick="runE10start()">Start</button
-            ><button class="alt" onclick="runE10stop()">Stop</button>
+            ><button onclick="runE10stop()">Stop</button>
           </div>
-          <div class="output" id="out-e10">// press start</div>
+          <div class="out" id="out-e10">// press start</div>
+        </div>
         </div>
       </section>
     </main>

@@ -275,58 +275,52 @@
       </section>
 
       <!-- ============ 5. DOM MANIPULATION ============ -->
-      <section class="topic" id="dom" style="--accent: #c23b31">
-        <div class="topic-head">
-          <span class="topic-n">05</span>
-          <h2>DOM manipulation</h2>
-        </div>
-        <p class="topic-blurb">
+      <section id="dom">
+        <h2>DOM manipulation</h2>
+        <p class="sub">
           Once you've found an element, you can change it — ten everyday UI
           updates.
         </p>
-
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Update order status</span
-            ><span class="badge simple">simple</span>
+        <div class="grid">
+        <div class="box">
+          <div class="box-header">
+            <span>Update order status</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Changes a line of text, the way a delivery app updates your order.
           </p>
-          <div class="row">
-            <span class="pill" id="d1-status">Preparing</span
+          <div class="controls">
+            <span class="tag" id="d1-status">Preparing</span
             ><button onclick="runD1()">Mark shipped</button>
           </div>
-          <div class="output" id="out-d1">// press to update</div>
+          <div class="out" id="out-d1">// press to update</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Toggle a sale badge</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Toggle a sale badge</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Adds or removes a highlighted style from an element.
           </p>
-          <div class="row">
-            <span class="pill" id="d2-badge">Regular price</span
+          <div class="controls">
+            <span class="tag" id="d2-badge">Regular price</span
             ><button onclick="runD2()">Toggle sale</button>
           </div>
-          <div class="output" id="out-d2">// press to toggle</div>
+          <div class="out" id="out-d2">// press to toggle</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Add item to cart</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Add item to cart</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Creates a new list item and appends it to the page.
           </p>
-          <ul class="list" id="d3-cart">
-            <li>Notebook <span class="pill">৳120</span></li>
+          <ul id="d3-cart">
+            <li>Notebook <span class="tag">৳120</span></li>
           </ul>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="d3-item"
@@ -339,59 +333,56 @@
               style="width: 80px"
             /><button onclick="runD3()">Add to cart</button>
           </div>
-          <div class="output" id="out-d3">// add an item above</div>
+          <div class="out" id="out-d3">// add an item above</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Remove a to-do</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Remove a to-do</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">Removes an element from the page entirely.</p>
-          <ul class="list" id="d4-todo">
+          <p>Removes an element from the page entirely.</p>
+          <ul id="d4-todo">
             <li>
               Buy groceries
-              <button class="mini" onclick="this.parentElement.remove()">
+              <button onclick="this.parentElement.remove()">
                 done
               </button>
             </li>
             <li>
               Finish homework
-              <button class="mini" onclick="this.parentElement.remove()">
+              <button onclick="this.parentElement.remove()">
                 done
               </button>
             </li>
           </ul>
-          <div class="output" id="out-d4">// click "done" to remove a task</div>
+          <div class="out" id="out-d4">// click "done" to remove a task</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Notification bell count</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Notification bell count</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Bumps a badge number up, like new messages arriving.
           </p>
-          <div class="row">
-            🔔 <span class="pill" id="d5-count">0</span
+          <div class="controls">
+            🔔 <span class="tag" id="d5-count">0</span
             ><button onclick="runD5()">New message</button
-            ><button class="alt" onclick="runD5clear()">Clear</button>
+            ><button onclick="runD5clear()">Clear</button>
           </div>
-          <div class="output" id="out-d5">
+          <div class="out" id="out-d5">
             // press "new message" a few times
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Bio character counter</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Bio character counter</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Live-updates a counter as you type, common on profile forms.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="d6-bio"
@@ -401,18 +392,17 @@
               oninput="runD6()"
             />
           </div>
-          <div class="output" id="out-d6">0 / 80 characters</div>
+          <div class="out" id="out-d6">0 / 80 characters</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Form completion bar</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Form completion bar</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Fills a progress bar based on how many fields are filled in.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="d7-name"
@@ -433,63 +423,58 @@
               oninput="runD7()"
             />
           </div>
-          <div class="bar-track">
-            <div class="bar-fill" id="d7-bar"></div>
-          </div>
-          <div class="output" id="out-d7">0% complete</div>
+          <div class="out" id="out-d7">0% complete</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Switch a product thumbnail</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Switch a product thumbnail</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Clicking a color swatch swaps which image / label is shown as
             active.
           </p>
           <div class="box" id="d8-preview">Viewing: Blue</div>
-          <div class="row">
+          <div class="controls">
             <button onclick="runD8('Blue')">Blue</button
             ><button onclick="runD8('Red')">Red</button
             ><button onclick="runD8('Black')">Black</button>
           </div>
-          <div class="output" id="out-d8">// pick a color</div>
+          <div class="out" id="out-d8">// pick a color</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Render a contact list</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Render a contact list</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Builds an entire list of elements from an array of data in one go.
           </p>
-          <ul class="list" id="d9-contacts"></ul>
-          <div class="row">
+          <ul id="d9-contacts"></ul>
+          <div class="controls">
             <button onclick="runD9()">Render contacts</button
-            ><button class="alt" onclick="runD9sort()">Sort A–Z</button>
+            ><button onclick="runD9sort()">Sort A–Z</button>
           </div>
-          <div class="output" id="out-d9">// press render</div>
+          <div class="out" id="out-d9">// press render</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Confirm-delete dialog</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Confirm-delete dialog</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Shows and hides a confirmation panel, like deleting an account.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runD10()">Delete account</button>
           </div>
           <div class="box" id="d10-modal" style="display: none">
             Are you sure?
             <button onclick="runD10confirm()">Yes, delete</button>
-            <button class="alt" onclick="runD10cancel()">Cancel</button>
+            <button onclick="runD10cancel()">Cancel</button>
           </div>
-          <div class="output" id="out-d10">// press delete account</div>
+          <div class="out" id="out-d10">// press delete account</div>
+        </div>
         </div>
       </section>
     </main>

@@ -4,72 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn JS by Doing — an interactive playground</title>
-    <link rel="stylesheet" href="css/play.css" />
-    <link rel="stylesheet" href="/css/design.css" />
+    <link rel="stylesheet" href="css/design.css" />
   </head>
   <body>
     <nav id="sidebar">
       <h3>JS Demonstrations</h3>
-      <a href="veriables.html">1. Variables</a>
-      <a href="conditions.html">2. Conditionals</a>
-      <a href="loops.html">3. Loops</a>
-      <a href="selectors.html">4. Selectors</a>
-      <a href="doms.html">5. DOM</a>
-      <a href="functions.html">6. Functions</a>
-      <a href="objects.html">7. Objects</a>
-      <a href="events.html">8. Events</a>
+      <a href="./parts/veriables.html">1. Variables</a>
+      <a href="./parts/conditions.html">2. Conditionals</a>
+      <a href="./parts/loops.html">3. Loops</a>
+      <a href="./parts/selectors.html">4. Selectors</a>
+      <a href="./parts/doms.html">5. DOM</a>
+      <a href="./parts/functions.html">6. Functions</a>
+      <a href="./parts/objects.html">7. Objects</a>
+      <a href="./parts/events.html">8. Events</a>
     </nav>
 
     <main id="main">
-      <div class="intro">
-        <h1>Learn JavaScript through real examples.</h1>
-        <p>
+      <section>
+        <h2>Learn JavaScript through real examples.</h2>
+        <p class="sub">
           Ten small, real-life demos per topic — from a corner shop till to a
           bank account. Press a button, see it happen. No code shown, just the
           result.
         </p>
-        <div class="hint">👈 jump to any section from the menu</div>
-      </div>
+        <div class="grid">
+          <div class="box">
+            <div class="box-header">
+              <span>👈 Jump to any section from the menu</span>
+            </div>
+            <div class="out">Pick a topic from the sidebar to get started.</div>
+          </div>
+        </div>
+      </section>
     </main>
-
-    <script>
-      /* ---- nav + progress ---- */
-      const navItems = document.querySelectorAll("#navList li");
-      const topics = document.querySelectorAll("section.topic");
-      navItems.forEach((item) =>
-        item.addEventListener("click", () =>
-          document
-            .getElementById(item.dataset.target)
-            .scrollIntoView({ behavior: "smooth" }),
-        ),
-      );
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              navItems.forEach((li) =>
-                li.classList.toggle(
-                  "active",
-                  li.dataset.target === entry.target.id,
-                ),
-              );
-              const idx = Array.from(topics).indexOf(entry.target);
-              document.getElementById("progressFill").style.width =
-                ((idx + 1) / topics.length) * 100 + "%";
-            }
-          });
-        },
-        { rootMargin: "-15% 0px -70% 0px" },
-      );
-      topics.forEach((t) => observer.observe(t));
-
-      /* ---- helpers ---- */
-      const $ = (id) => document.getElementById(id);
-      const num = (id) => Number($(id).value);
-      const val = (id) => $(id).value;
-      function log(id, text, cls) {
-        $(id).innerHTML = cls ? `<span class="${cls}">${text}</span>` : text;
-      }
-    </script>
   </body>
 </html>
+

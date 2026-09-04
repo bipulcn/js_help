@@ -228,68 +228,61 @@
       </section>
 
       <!-- ============ 7. OBJECTS & ARRAYS ============ -->
-      <section class="topic" id="objects" style="--accent: #b4740f">
-        <div class="topic-head">
-          <span class="topic-n">07</span>
-          <h2>Objects &amp; arrays</h2>
-        </div>
-        <p class="topic-blurb">
+      <section id="objects">
+        <h2>Objects &amp; arrays</h2>
+        <p class="sub">
           Objects group related data; arrays hold ordered lists, often of
           objects. Ten real records.
         </p>
-
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Read a user profile</span
-            ><span class="badge simple">simple</span>
+        <div class="grid">
+        <div class="box">
+          <div class="box-header">
+            <span>Read a user profile</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Dot notation reads values out of an object by key.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runO1()">Read profile</button>
           </div>
-          <div class="output" id="out-o1">// { name, email, plan }</div>
+          <div class="out" id="out-o1">// { name, email, plan }</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Read a product listing</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Read a product listing</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             The same pattern, applied to an item in a store.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runO2()">Read product</button>
           </div>
-          <div class="output" id="out-o2">// { name, price, inStock }</div>
+          <div class="out" id="out-o2">// { name, price, inStock }</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Update stock count</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Update stock count</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Changes one property on an object without touching the rest.
           </p>
-          <div class="row">
-            <span class="pill" id="o3-stock">stock: 8</span
+          <div class="controls">
+            <span class="tag" id="o3-stock">stock: 8</span
             ><button onclick="runO3()">Sell one</button>
           </div>
-          <div class="output" id="out-o3">// press to sell one unit</div>
+          <div class="out" id="out-o3">// press to sell one unit</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Find a contact by name</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Find a contact by name</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Searches an array of contact objects for one matching name.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="o4-name"
@@ -297,105 +290,100 @@
               style="width: 110px"
             /><button onclick="runO4()">Find contact</button>
           </div>
-          <div class="output" id="out-o4">
+          <div class="out" id="out-o4">
             // contacts: Tanvir, Nusrat, Farhan
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Bank account object</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Bank account object</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
-            An object with its own <span class="mono">deposit</span> /
-            <span class="mono">withdraw</span> methods.
+          <p>
+            An object with its own deposit /
+            withdraw methods.
           </p>
           <div class="box">
             balance: <strong id="o5-balance">৳1,000</strong>
           </div>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="o5-amt"
               value="200"
               style="width: 80px"
             /><button onclick="runO5('deposit')">Deposit</button
-            ><button class="alt" onclick="runO5('withdraw')">Withdraw</button>
+            ><button onclick="runO5('withdraw')">Withdraw</button>
           </div>
-          <div class="output" id="out-o5">// pick an amount</div>
+          <div class="out" id="out-o5">// pick an amount</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Filter in-stock products</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Filter in-stock products</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Keeps only the objects in an array where a property is true.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runO6()">Show in-stock</button>
           </div>
-          <div class="output" id="out-o6">// 4 products, some out of stock</div>
+          <div class="out" id="out-o6">// 4 products, some out of stock</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Sort contacts A–Z</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Sort contacts A–Z</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Sorts an array of objects by one of their properties.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runO7()">Sort contacts</button>
           </div>
-          <div class="output" id="out-o7">// contacts: Zayan, Amina, Kabir</div>
+          <div class="out" id="out-o7">// contacts: Zayan, Amina, Kabir</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Cart total with reduce</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Cart total with reduce</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
-            Sums <span class="mono">price × quantity</span> across an array of
+          <p>
+            Sums price × quantity across an array of
             cart-item objects.
           </p>
-          <div class="row"><button onclick="runO8()">Total cart</button></div>
-          <div class="output" id="out-o8">
+          <div class="controls"><button onclick="runO8()">Total cart</button></div>
+          <div class="out" id="out-o8">
             // 3 items, each with price &amp; quantity
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Nested order object</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Nested order object</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             An order object containing another object for shipping address.
           </p>
-          <div class="row"><button onclick="runO9()">Read order</button></div>
-          <div class="output" id="out-o9">// order.shipping.city</div>
+          <div class="controls"><button onclick="runO9()">Read order</button></div>
+          <div class="out" id="out-o9">// order.shipping.city</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Destructure user info</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Destructure user info</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Pulls several properties out of an object into their own variables
             at once.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runO10()">Destructure</button>
           </div>
-          <div class="output" id="out-o10">
+          <div class="out" id="out-o10">
             // const { name, email } = user;
           </div>
+        </div>
         </div>
       </section>
     </main>

@@ -208,25 +208,21 @@
       </section>
 
       <!-- ============ 3. LOOPS ============ -->
-      <section class="topic" id="loops" style="--accent: #7c6cf0">
-        <div class="topic-head">
-          <span class="topic-n">03</span>
-          <h2>Loops</h2>
-        </div>
-        <p class="topic-blurb">
+      <section id="loops">
+        <h2>Loops</h2>
+        <p class="sub">
           Loops repeat work so you don't have to write it out by hand — ten
           times it saves the day.
         </p>
-
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Times table</span
-            ><span class="badge simple">simple</span>
+        <div class="grid">
+        <div class="box">
+          <div class="box-header">
+            <span>Times table</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
-            A classic <span class="mono">for</span> loop, counting 1 to 10.
+          <p>
+            A classic for loop, counting 1 to 10.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="l1-n"
@@ -234,19 +230,18 @@
               style="width: 70px"
             /><button onclick="runL1()">Build table</button>
           </div>
-          <div class="output" id="out-l1">// pick a number</div>
+          <div class="out" id="out-l1">// pick a number</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Rocket countdown</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Rocket countdown</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
-            A <span class="mono">while</span> loop counts down until a condition
+          <p>
+            A while loop counts down until a condition
             is false.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="l2-n"
@@ -256,66 +251,62 @@
               style="width: 70px"
             /><button onclick="runL2()">Launch</button>
           </div>
-          <div class="output" id="out-l2">// starting number</div>
+          <div class="out" id="out-l2">// starting number</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Shopping cart total</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Shopping cart total</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Loops through a list of prices, adding them one by one.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runL3()">Total the cart</button>
           </div>
-          <div class="output" id="out-l3">
+          <div class="out" id="out-l3">
             // cart: ৳120, ৳75, ৳340, ৳95, ৳60
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Weekly step counts</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Weekly step counts</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             A fitness tracker printing a random step count for each of 7 days.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runL4()">Generate week</button>
           </div>
-          <div class="output" id="out-l4">
+          <div class="out" id="out-l4">
             // press to simulate a week of step data
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Highest exam score</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Highest exam score</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Loops through a class list tracking the largest value seen so far.
           </p>
-          <div class="row">
+          <div class="controls">
             <button onclick="runL5()">Find highest</button>
           </div>
-          <div class="output" id="out-l5">
+          <div class="out" id="out-l5">
             // scores: 68, 91, 77, 85, 59, 94, 72
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Factorial calculator</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Factorial calculator</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Multiplies a running total by each number counting down to 1.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="l6-n"
@@ -325,19 +316,18 @@
               style="width: 70px"
             /><button onclick="runL6()">Calculate</button>
           </div>
-          <div class="output" id="out-l6">// enter a whole number</div>
+          <div class="out" id="out-l6">// enter a whole number</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Password strength meter</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Password strength meter</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Loops through each typed character, counting letters, digits and
             symbols.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="l7-pw"
@@ -346,22 +336,18 @@
               oninput="runL7()"
             />
           </div>
-          <div class="bar-track">
-            <div class="bar-fill" id="l7-bar"></div>
-          </div>
-          <div class="output" id="out-l7">// start typing</div>
+          <div class="out" id="out-l7">// start typing</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">FizzBuzz generator</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>FizzBuzz generator</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             A classic loop puzzle: swap multiples of 3 and 5 for words instead
             of numbers.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="l8-max"
@@ -371,21 +357,20 @@
               style="width: 70px"
             /><button onclick="runL8()">Run FizzBuzz</button>
           </div>
-          <div class="output" id="out-l8">
+          <div class="out" id="out-l8">
             // counts up, replacing multiples of 3/5
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Checkerboard grid</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Checkerboard grid</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             A loop inside a loop paints rows and columns — the same idea behind
             a seating chart.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="l9-size"
@@ -395,20 +380,19 @@
               style="width: 70px"
             /><button onclick="runL9()">Paint grid</button>
           </div>
-          <div class="grid-mini" id="l9-grid"></div>
-          <div class="output" id="out-l9">// choose a board size</div>
+          <div id="l9-grid"></div>
+          <div class="out" id="out-l9">// choose a board size</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Star pyramid</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Star pyramid</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Nested loops building up a row at a time — a common loop-logic
             exercise.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="l10-rows"
@@ -418,7 +402,8 @@
               style="width: 70px"
             /><button onclick="runL10()">Build pyramid</button>
           </div>
-          <div class="output" id="out-l10">// pick a number of rows</div>
+          <div class="out" id="out-l10">// pick a number of rows</div>
+        </div>
         </div>
       </section>
     </main>

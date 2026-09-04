@@ -220,24 +220,20 @@
       </section>
 
       <!-- ============ 2. CONDITIONALS ============ -->
-      <section class="topic" id="conditionals" style="--accent: #b4740f">
-        <div class="topic-head">
-          <span class="topic-n">02</span>
-          <h2>Conditional statements</h2>
-        </div>
-        <p class="topic-blurb">
-          <span class="mono">if / else</span> and
-          <span class="mono">switch</span> let a program make decisions — ten
+      <section id="conditionals">
+        <h2>Conditional statements</h2>
+        <p class="sub">
+          if / else and
+          switch let a program make decisions — ten
           places apps make them constantly.
         </p>
-
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Voting eligibility</span
-            ><span class="badge simple">simple</span>
+        <div class="grid">
+        <div class="box">
+          <div class="box-header">
+            <span>Voting eligibility</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">A single condition on one number.</p>
-          <div class="row">
+          <p>A single condition on one number.</p>
+          <div class="controls">
             <input
               type="number"
               id="c1-age"
@@ -245,18 +241,17 @@
               style="width: 70px"
             /><button onclick="runC1()">Check</button>
           </div>
-          <div class="output" id="out-c1">// enter an age</div>
+          <div class="out" id="out-c1">// enter an age</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Even or odd</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Even or odd</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             The remainder operator decides which branch runs.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="c2-n"
@@ -264,19 +259,18 @@
               style="width: 70px"
             /><button onclick="runC2()">Check</button>
           </div>
-          <div class="output" id="out-c2">// enter a number</div>
+          <div class="out" id="out-c2">// enter a number</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Login check</span
-            ><span class="badge simple">simple</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Login check</span><span class="lvl">simple</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Compares entered credentials against a stored account — the core of
             every login form.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="text"
               id="c3-u"
@@ -291,20 +285,19 @@
               style="width: 100px"
             /><button onclick="runC3()">Log in</button>
           </div>
-          <div class="output" id="out-c3">
+          <div class="out" id="out-c3">
             // try username "admin" / password "1234"
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Movie ticket pricing</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Movie ticket pricing</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Cinemas price tickets by age bracket using chained conditions.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="c4-age"
@@ -312,21 +305,20 @@
               style="width: 70px"
             /><button onclick="runC4()">Get price</button>
           </div>
-          <div class="output" id="out-c4">
+          <div class="out" id="out-c4">
             // child &lt;12: ৳150, adult: ৳350, senior 60+: ৳200
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">ATM withdrawal validator</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>ATM withdrawal validator</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Checks the requested amount against the account balance before
             allowing it.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="c5-amt"
@@ -334,19 +326,18 @@
               style="width: 90px"
             /><button onclick="runC5()">Withdraw</button>
           </div>
-          <div class="output" id="out-c5">// balance: ৳2,000</div>
+          <div class="out" id="out-c5">// balance: ৳2,000</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Grade calculator</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Grade calculator</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
-            A <span class="mono">switch</span> statement buckets a score into a
+          <p>
+            A switch statement buckets a score into a
             letter grade.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="c6-score"
@@ -356,19 +347,18 @@
               style="width: 70px"
             /><button onclick="runC6()">Get grade</button>
           </div>
-          <div class="output" id="out-c6">// enter a score 0–100</div>
+          <div class="out" id="out-c6">// enter a score 0–100</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Weather outfit suggester</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Weather outfit suggester</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Suggests what to wear based on the temperature — like a weather app
             tip.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="c7-temp"
@@ -376,20 +366,19 @@
               style="width: 70px"
             /><button onclick="runC7()">Suggest</button>
           </div>
-          <div class="output" id="out-c7">
+          <div class="out" id="out-c7">
             // enter today's temperature (°C)
           </div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Free shipping check</span
-            ><span class="badge medium">medium</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Free shipping check</span><span class="lvl">medium</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Online stores waive shipping once a cart passes a threshold.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="c8-cart"
@@ -397,18 +386,17 @@
               style="width: 90px"
             /><button onclick="runC8()">Check cart</button>
           </div>
-          <div class="output" id="out-c8">// free shipping over ৳1,500</div>
+          <div class="out" id="out-c8">// free shipping over ৳1,500</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">BMI category</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>BMI category</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Several ranges chained together to classify one number.
           </p>
-          <div class="row">
+          <div class="controls">
             <input
               type="number"
               id="c9-bmi"
@@ -417,24 +405,24 @@
               style="width: 80px"
             /><button onclick="runC9()">Classify</button>
           </div>
-          <div class="output" id="out-c9">// enter a BMI value</div>
+          <div class="out" id="out-c9">// enter a BMI value</div>
         </div>
 
-        <div class="ex">
-          <div class="ex-head">
-            <span class="ex-title">Traffic light state machine</span
-            ><span class="badge tricky">tricky</span>
+        <div class="box">
+          <div class="box-header">
+            <span>Traffic light state machine</span><span class="lvl">tricky</span>
           </div>
-          <p class="ex-desc">
+          <p>
             Each press decides the next state based on the current one.
           </p>
-          <div class="row">
+          <div class="controls">
             <span class="dot" id="c10-red"></span
             ><span class="dot" id="c10-amber"></span
             ><span class="dot" id="c10-green"></span
             ><button onclick="runC10()">Next light</button>
           </div>
-          <div class="output" id="out-c10">// current: red</div>
+          <div class="out" id="out-c10">// current: red</div>
+        </div>
         </div>
       </section>
     </main>
